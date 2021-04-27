@@ -3,43 +3,80 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 function Wishlist(props) {
-  const [wishlist, setWishlist] = useState([]);
+  const [fakestoreWishlist, setFakestoreWishlist] = useState([]);
+  const [makeupWishlist, setMakeupWishlist] = useState([]);
 
   useEffect(() => {
     axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
       console.log(res);
-      setWishlist(res.data);
+      setMakeupWishlist(res.data);
+    });
+    axios.get(`https://ironrest.herokuapp.com/wishlist2`).then((res) => {
+      console.log(res);
+      setFakestoreWishlist(res.data);
     });
   }, []);
 
-  function refreshPage() {
+  function refreshMakeupPage() {
     axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
       console.log(res);
-      setWishlist(res.data);
+      setMakeupWishlist(res.data);
     });
   }
 
-  let showWishlist = () => {
-    return wishlist.map((item) => {
+  function refreshFakestorePage() {
+    axios.get(`https://ironrest.herokuapp.com/wishlist2`).then((res) => {
+      console.log(res);
+      setFakestoreWishlist(res.data);
+    });
+  }
+
+  let showMakeup = () => {
+    return makeupWishlist.map((item) => {
       return (
         <div>
           <img src={item.product.image_link} />
           <div>{item.product.name}</div>
           <div>{item.product.price}</div>
 
-          <button onClick={() => removeItem(item)}>Remove Item</button>
+          <button onClick={() => removeMakeup(item)}>Remove Item</button>
         </div>
       );
     });
   };
 
-  let removeItem = (item) => {
-    axios
-      .delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`)
-      .then(() => refreshPage());
+  let showFakestore = () => {
+    return fakestoreWishlist.map((item) => {
+      return (
+        <div>
+          <img src={item.product.image} />
+          <div>{item.product.title}</div>
+          <div>{item.product.price}</div>
+
+          <button onClick={() => removeFakestore(item)}>Remove Item</button>
+        </div>
+      );
+    });
   };
 
-  return <div>{showWishlist()}</div>;
+  let removeMakeup = (item) => {
+    axios
+      .delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`)
+      .then(() => refreshMakeupPage());
+  };
+
+  let removeFakestore = (item) => {
+    axios
+      .delete(`https://ironrest.herokuapp.com/wishlist2/${item._id}`)
+      .then(() => refreshFakestorePage());
+  };
+
+  return (
+    <div>
+      {showMakeup()}
+      {showFakestore()}
+    </div>
+  );
 }
 
 export default Wishlist;
