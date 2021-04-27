@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-let MakeupList = [];
+import Navbar from "./Navbar";
+
 function Makeup(props) {
   const [products, setProducts] = useState([]);
 
@@ -33,16 +34,14 @@ function Makeup(props) {
   };
 
   function addToWishlist(product) {
-    console.log(MakeupList);
-    MakeupList.push({
-      image: product.image_link,
-      name: product.name,
-      price: product.price,
-    });
+    axios
+      .post(`https://ironrest.herokuapp.com/wishlist`, { product: product })
+      .then((res) => console.log(res));
   }
 
   return (
     <div>
+      <Navbar />
       <div>Makeup goes here</div>
       <div>{allProducts()}</div>
     </div>
@@ -50,4 +49,3 @@ function Makeup(props) {
 }
 
 export default Makeup;
-export { MakeupList };
