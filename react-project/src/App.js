@@ -1,11 +1,18 @@
-import logo from "./logo.svg";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Forever21 from "./components/Forever21";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import { Switch, Route } from "react-router-dom";
+import FakeStore from "./components/FakeStore";
 
 function App() {
   return (
     <div className="App">
-      <Forever21 />
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/fakestore" component={FakeStore} />
+      </Switch>
     </div>
   );
 }
