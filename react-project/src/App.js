@@ -10,8 +10,8 @@ import Wishlist from "./components/Wishlist";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Wishlist />
+      
+     
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/fakestore" component={FakeStore} />
