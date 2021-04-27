@@ -12,7 +12,14 @@ function FakeStore(props) {
 
   let allProducts = () => {
     return products.map((product, i) => {
-      return <div key={i}>{product.price}</div>;
+      return (
+        <div>
+          <img src={product.image} />
+          <div>{product.title}</div>
+          <div>{product.price}</div>
+          <div>{product.description}</div>
+        </div>
+      );
     });
   };
 

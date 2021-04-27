@@ -6,6 +6,7 @@ function Home(props) {
     <div>
       <h1>Hello, it's Home</h1>
       <Link to="/FakeStore">Fakestore</Link>
+      <Link to="/Makeup">Makeup</Link>
     </div>
   );
 }
