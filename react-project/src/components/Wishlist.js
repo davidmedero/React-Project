@@ -12,6 +12,13 @@ function Wishlist(props) {
     });
   }, []);
 
+  function refreshPage() {
+    axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
+      console.log(res);
+      setWishlist(res.data);
+    });
+  }
+
   let showWishlist = () => {
     return wishlist.map((item) => {
       return (
@@ -19,16 +26,17 @@ function Wishlist(props) {
           <img src={item.product.image_link} />
           <div>{item.product.name}</div>
           <div>{item.product.price}</div>
-          <Link to="/">
-            <button onClick={() => removeItem(item)}>Remove Item</button>
-          </Link>
+
+          <button onClick={() => removeItem(item)}>Remove Item</button>
         </div>
       );
     });
   };
 
   let removeItem = (item) => {
-    axios.delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`);
+    axios
+      .delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`)
+      .then(() => refreshPage());
   };
 
   return <div>{showWishlist()}</div>;
