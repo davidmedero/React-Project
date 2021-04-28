@@ -8,25 +8,21 @@ function Wishlist(props) {
 
   useEffect(() => {
     axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
-      console.log(res);
       setMakeupWishlist(res.data);
     });
     axios.get(`https://ironrest.herokuapp.com/wishlist2`).then((res) => {
-      console.log(res);
       setFakestoreWishlist(res.data);
     });
   }, []);
 
   function refreshMakeupPage() {
     axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
-      console.log(res);
       setMakeupWishlist(res.data);
     });
   }
 
   function refreshFakestorePage() {
     axios.get(`https://ironrest.herokuapp.com/wishlist2`).then((res) => {
-      console.log(res);
       setFakestoreWishlist(res.data);
     });
   }
@@ -71,8 +67,34 @@ function Wishlist(props) {
       .then(() => refreshFakestorePage());
   };
 
+  const clearAllFakestore = (item) => {
+    return fakestoreWishlist.map((item) => {
+      axios
+        .delete(`https://ironrest.herokuapp.com/wishlist2/${item._id}`)
+        .then(() => refreshFakestorePage());
+    });
+  };
+
+  const clearAllMakeup = (item) => {
+    return makeupWishlist.map((item) => {
+      axios
+        .delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`)
+        .then(() => refreshMakeupPage());
+    });
+  };
+
   return (
     <div>
+      <div>
+        <button
+          onClick={() => {
+            clearAllFakestore();
+            clearAllMakeup();
+          }}
+        >
+          Clear All
+        </button>
+      </div>
       {showMakeup()}
       {showFakestore()}
     </div>
