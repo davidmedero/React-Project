@@ -39,19 +39,19 @@ function Makeup(props) {
     axios.post(`https://ironrest.herokuapp.com/wishlist`, { product: product });
   }
 
-  
+
   function sortByHigh() {
-   setProducts([...products].sort((a,b) => {
+    setProducts([...products].sort((a, b) => {
       return Number(b.price) - Number(a.price)
     }))
     console.log(products)
   }
 
   function sortByLow() {
-    setProducts([...products].sort((a,b) => {
-       return Number(a.price) - Number(b.price)
-     }))
-   }
+    setProducts([...products].sort((a, b) => {
+      return Number(a.price) - Number(b.price)
+    }))
+  }
 
   return (
     <div>
