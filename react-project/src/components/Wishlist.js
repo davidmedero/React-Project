@@ -107,13 +107,13 @@ function Wishlist(props) {
   };
 
   const makeupTotalSum = () => {
-    return makeupWishlist.reduce((sum, item) => sum + item.product.price, 0);
+    return makeupWishlist.reduce((sum, item) => sum + Number(item.product.price), 0);
   };
 
   let totalSum = (item) => {
     if (fakestoreWishlist.length > 0 || makeupWishlist.length > 0) {
       return (
-        "Sum:  " + (Number(fakestoreTotalSum()) + Number(makeupTotalSum()))
+        "Sum:  " + (Number(fakestoreTotalSum()) + Number(makeupTotalSum())).toFixed(2)
       );
     }
   };

@@ -20,9 +20,9 @@ function Makeup(props) {
       return (
         <div className="makeupJsProductContainer">
           <img src={product.image_link} className="makeupJsImages" />
-          <div className="makeupJsname">{product.name}</div>
-          <div className="makeupJsrating">{product.rating}</div>
-          <div className="makeupJsprice">{product.price}</div>
+          <div className="makeupJsname"><b>{product.name}</b></div>
+          <div className="makeupJsrating">Rating: {product.rating}</div>
+          <div className="makeupJsprice">${product.price}</div>
           <div className="makeupJsdescription">{product.description}</div>
           <button
             className="makeupJsAddButton"
@@ -39,10 +39,26 @@ function Makeup(props) {
     axios.post(`https://ironrest.herokuapp.com/wishlist`, { product: product });
   }
 
+  
+  function sortByHigh() {
+   setProducts([...products].sort((a,b) => {
+      return Number(b.price) - Number(a.price)
+    }))
+    console.log(products)
+  }
+
+  function sortByLow() {
+    setProducts([...products].sort((a,b) => {
+       return Number(a.price) - Number(b.price)
+     }))
+   }
+
   return (
     <div>
       <Navbar />
-      <div>Makeup goes here</div>
+      Sort By:
+      <button onClick={() => sortByHigh()}>Highest Price</button>
+      <button onClick={() => sortByLow()}>Lowest Price</button>
       <div>{allProducts()}</div>
     </div>
   );
