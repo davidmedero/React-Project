@@ -33,7 +33,14 @@ function FakeStore(props) {
     });
   };
 
-  function addToWishlist(product) {
+  function addToWishlist(item) {
+    console.log(item);
+    let product = {
+      name: item.title,
+      price: item.price,
+      image: item.image
+    };
+    console.log(product);
     axios.post(`https://ironrest.herokuapp.com/wishlist`, {
       product: product,
     });

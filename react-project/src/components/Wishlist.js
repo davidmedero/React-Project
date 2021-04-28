@@ -12,8 +12,6 @@ function Wishlist(props) {
     });
   }, []);
 
-  console.log(makeupWishlist);
-
   function refreshMakeupPage() {
     axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
       setMakeupWishlist(res.data);
@@ -74,7 +72,7 @@ function Wishlist(props) {
     return makeupWishlist.map((item) => {
       return (
         <div className="makeupItemContainer">
-          <img src={item.product.image_link} className="makeupImages" />
+          <img src={item.product.image} className="makeupImages" />
           <div className="makeupPrice">{item.product.price}</div>
           <div className="makeupName">{item.product.name}</div>
 
@@ -115,14 +113,11 @@ function Wishlist(props) {
   };
 
   const clearAll = (item) => {
-    console.log(mergedWishlist);
-    setMergedWishlist([...mergedWishlist].splice(0, mergedWishlist.length));
-    // return mergedWishlist.map((item) => {
-    //   // axios
-    //   //   .delete(`https://ironrest.herokuapp.com/wishlist2/${item._id}`)
-    //   //   .then(() => refreshFakestorePage());
-
-    // });
+    return mergedWishlist.map((item) => {
+      axios
+        .delete(`https://ironrest.herokuapp.com/wishlist2/${item._id}`)
+      //.then(() => refreshFakestorePage());
+    });
   };
 
   const clearAllMakeup = () => {

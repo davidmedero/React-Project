@@ -38,14 +38,15 @@ function Makeup(props) {
   };
 
   function addToWishlist(item) {
-    let newProduct = {
-      name: item.product.name,
-      price: item.product.price,
-      image: item.product.image_link,
-      id: item._id,
+    console.log(item);
+    let product = {
+      name: item.name,
+      price: item.price,
+      image: item.image_link
     };
+    console.log(product);
     axios.post(`https://ironrest.herokuapp.com/wishlist`, {
-      product: newProduct,
+      product: product,
     });
   }
 
