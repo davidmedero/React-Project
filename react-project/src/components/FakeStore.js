@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
+import SearchBar from "./SearchBar";
 
 function FakeStore(props) {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,7 @@ function FakeStore(props) {
   return (
     <div>
       <Navbar />
-      <div>Fakestore products go here</div>
+      <SearchBar />
       <div>{allProducts()}</div>
     </div>
   );
