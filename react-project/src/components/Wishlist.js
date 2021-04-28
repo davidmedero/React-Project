@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link} from "react-router-dom";
 
 
 function Wishlist(props) {
@@ -28,13 +27,16 @@ function Wishlist(props) {
     });
   }
 
+
+
   let showMakeup = () => {
     return makeupWishlist.map((item) => {
       return (
         <div className="makeupItemContainer">
           <img src={item.product.image_link} className="makeupImages" />
-          <div className="makeupName">{item.product.name}</div>
           <div className="makeupPrice">{item.product.price}</div>
+          <div className="makeupName">{item.product.name}</div>
+          
 
           <button
             className="makeupRemoveButton"
@@ -96,14 +98,14 @@ function Wishlist(props) {
 
   let wishlistQuantity = () => {
     if (fakestoreWishlist.length > 0 || makeupWishlist.length > 0) {
-      return "Total:  " + (fakestoreWishlist.length + makeupWishlist.length);
+      return "Quantity:  " + (fakestoreWishlist.length + makeupWishlist.length);
     } else {
       return "Add some products!!!";
     }
   };
 
   const fakestoreTotalSum = () => {
-    return fakestoreWishlist.reduce((sum, item) => sum + item.product.price, 0);
+    return fakestoreWishlist.reduce((sum, item) => sum + Number(item.product.price), 0);
   };
 
   const makeupTotalSum = () => {
@@ -113,10 +115,11 @@ function Wishlist(props) {
   let totalSum = (item) => {
     if (fakestoreWishlist.length > 0 || makeupWishlist.length > 0) {
       return (
-        "Sum:  " + (Number(fakestoreTotalSum()) + Number(makeupTotalSum())).toFixed(2)
+        "Total:  $" + (Number(fakestoreTotalSum()) + Number(makeupTotalSum())).toFixed(2)
       );
     }
   };
+
 
   return (
     <div>

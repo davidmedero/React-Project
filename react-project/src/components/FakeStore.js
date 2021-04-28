@@ -16,8 +16,8 @@ function FakeStore(props) {
       return (
         <div className="fakestoreJsProductContainer">
           <img src={product.image} className="fakestoreJsImages" />
-          <div className="fakestoreJsTitle">{product.title}</div>
-          <div className="fakestoreJsPrice">{product.price}</div>
+          <div className="fakestoreJsTitle"><b>{product.title}</b></div>
+          <div className="fakestoreJsPrice">${product.price}</div>
           <div className="fakestoreJsDescription">{product.description}</div>
           <button
             className="fakestoreJsAddButton"

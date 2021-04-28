@@ -17,6 +17,7 @@ function Home(props) {
           <Link to="/Makeup" className="makeupLinkHome">
             Makeup
           </Link>
+          <Link to="/NewItem" className="newItemLink">Add Your Own Item</Link>
         </div>
       </div>
     </div>
