@@ -14,12 +14,15 @@ function FakeStore(props) {
   let allProducts = () => {
     return products.map((product, i) => {
       return (
-        <div>
-          <img src={product.image} />
-          <div>{product.title}</div>
-          <div>{product.price}</div>
-          <div>{product.description}</div>
-          <button onClick={() => addToWishlist(product)}>
+        <div className="fakestoreJsProductContainer">
+          <img src={product.image} className="fakestoreJsImages" />
+          <div className="fakestoreJsTitle">{product.title}</div>
+          <div className="fakestoreJsPrice">{product.price}</div>
+          <div className="fakestoreJsDescription">{product.description}</div>
+          <button
+            className="fakestoreJsAddButton"
+            onClick={() => addToWishlist(product)}
+          >
             Add to Wishlist
           </button>
         </div>

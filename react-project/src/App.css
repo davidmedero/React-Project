@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+.homeHeader {
+  display: flex;
+  justify-content: space-around;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.homeContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wishlistQuantity {
+  margin-left: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.storeContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.makeupLinkHome {
+  margin-top: 50px;
+}
+
+.fakestoreImages {
+  width: 200px;
+}
+
+.makeupItemContainer {
+  margin: 70px 0;
+}
+
+.fakestoreItemContainer {
+  margin: 70px 0;
+}
+
+.makeupImages {
+  margin-bottom: 30px;
+}
+
+.fakestoreImages {
+  margin-bottom: 30px;
+}
+
+.fakestoreTitle {
+  margin-bottom: 10px;
+}
+
+.makeupName {
+  margin-bottom: 10px;
+}
+
+.makeupPrice {
+  margin-bottom: 10px;
+}
+
+.fakestorePrice {
+  margin-bottom: 10px;
+}
+
+.fakestoreJsProductContainer {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.fakestoreJsImages {
+  width: 300px;
+  margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fakestoreJsTitle {
+  margin-bottom: 10px;
+}
+
+.fakestoreJsPrice {
+  margin-bottom: 10px;
+}
+
+.fakestoreJsDescription {
+  margin-bottom: 15px;
+  width: 500px;
+}
+
+.fakestoreJsAddButton {
+  margin-bottom: 80px;
+}
+
+.makeupJsProductContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.makeupJsdescription {
+  width: 500px;
+}
+
+.makeupJsImages {
+  margin-bottom: 30px;
+}
+
+.makeupJsname {
+  margin-bottom: 10px;
+}
+
+.makeupJsrating {
+  margin-bottom: 10px;
+}
+
+.makeupJsprice {
+  margin-bottom: 10px;
+}
+
+.makeupJsdescription {
+  margin-bottom: 15px;
+}
+
+.makeupJsAddButton {
+  margin-bottom: 85px;
 }

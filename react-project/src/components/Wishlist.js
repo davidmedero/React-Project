@@ -30,12 +30,17 @@ function Wishlist(props) {
   let showMakeup = () => {
     return makeupWishlist.map((item) => {
       return (
-        <div>
-          <img src={item.product.image_link} />
-          <div>{item.product.name}</div>
-          <div>{item.product.price}</div>
+        <div className="makeupItemContainer">
+          <img src={item.product.image_link} className="makeupImages" />
+          <div className="makeupName">{item.product.name}</div>
+          <div className="makeupPrice">{item.product.price}</div>
 
-          <button onClick={() => removeMakeup(item)}>Remove Item</button>
+          <button
+            className="makeupRemoveButton"
+            onClick={() => removeMakeup(item)}
+          >
+            Remove Item
+          </button>
         </div>
       );
     });
@@ -44,12 +49,17 @@ function Wishlist(props) {
   let showFakestore = () => {
     return fakestoreWishlist.map((item) => {
       return (
-        <div>
-          <img src={item.product.image} />
-          <div>{item.product.title}</div>
-          <div>{item.product.price}</div>
+        <div className="fakestoreItemContainer">
+          <img src={item.product.image} className="fakestoreImages" />
+          <div className="fakestoreTitle">{item.product.title}</div>
+          <div className="fakestorePrice">{item.product.price}</div>
 
-          <button onClick={() => removeFakestore(item)}>Remove Item</button>
+          <button
+            className="fakestoreRemoveButton"
+            onClick={() => removeFakestore(item)}
+          >
+            Remove Item
+          </button>
         </div>
       );
     });
@@ -83,6 +93,14 @@ function Wishlist(props) {
     });
   };
 
+  let wishlistQuantity = () => {
+    if (fakestoreWishlist.length > 0 || makeupWishlist.length > 0) {
+      return "Total:  " + (fakestoreWishlist.length + makeupWishlist.length);
+    } else {
+      return "Add some products!!!";
+    }
+  };
+
   return (
     <div>
       <div>
@@ -94,6 +112,7 @@ function Wishlist(props) {
         >
           Clear All
         </button>
+        <span className="wishlistQuantity">{wishlistQuantity()}</span>
       </div>
       {showMakeup()}
       {showFakestore()}
