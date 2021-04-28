@@ -101,6 +101,22 @@ function Wishlist(props) {
     }
   };
 
+  const fakestoreTotalSum = () => {
+    return fakestoreWishlist.reduce((sum, item) => sum + item.product.price, 0);
+  };
+
+  const makeupTotalSum = () => {
+    return makeupWishlist.reduce((sum, item) => sum + item.product.price, 0);
+  };
+
+  let totalSum = (item) => {
+    if (fakestoreWishlist.length > 0 || makeupWishlist.length > 0) {
+      return (
+        "Sum:  " + (Number(fakestoreTotalSum()) + Number(makeupTotalSum()))
+      );
+    }
+  };
+
   return (
     <div>
       <div>
@@ -112,7 +128,8 @@ function Wishlist(props) {
         >
           Clear All
         </button>
-        <span className="wishlistQuantity">{wishlistQuantity()}</span>
+        <span className="wishlistTotal">{wishlistQuantity()}</span>
+        <span className="wishlistSum">{totalSum()}</span>
       </div>
       {showMakeup()}
       {showFakestore()}

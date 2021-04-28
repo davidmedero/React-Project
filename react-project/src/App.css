@@ -9,7 +9,11 @@
   margin-top: 100px;
 }
 
-.wishlistQuantity {
+.wishlistTotal {
+  margin-left: 20px;
+}
+
+.wishlistSum {
   margin-left: 20px;
 }
 
