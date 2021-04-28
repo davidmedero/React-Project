@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import { useHistory } from "react-router-dom";
 
 function Makeup(props) {
-  const history = useHistory();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,14 +18,16 @@ function Makeup(props) {
   let allProducts = () => {
     return products.map((product, i) => {
       return (
-        <div>
-          <img src={product.image_link} />
-          <div>{product.type}</div>
-          <div>{product.name}</div>
-          <div>{product.rating}</div>
-          <div>{product.price}</div>
-          <div>{product.description}</div>
-          <button onClick={() => addToWishlist(product)}>
+        <div className="makeupJsProductContainer">
+          <img src={product.image_link} className="makeupJsImages" />
+          <div className="makeupJsname">{product.name}</div>
+          <div className="makeupJsrating">{product.rating}</div>
+          <div className="makeupJsprice">{product.price}</div>
+          <div className="makeupJsdescription">{product.description}</div>
+          <button
+            className="makeupJsAddButton"
+            onClick={() => addToWishlist(product)}
+          >
             Add to Wishlist
           </button>
         </div>
@@ -36,10 +36,7 @@ function Makeup(props) {
   };
 
   function addToWishlist(product) {
-    product.preventDefault();
-    axios
-      .post(`https://ironrest.herokuapp.com/wishlist`, { product: product })
-      .then(history.push(`/`));
+    axios.post(`https://ironrest.herokuapp.com/wishlist`, { product: product });
   }
 
   return (

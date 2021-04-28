@@ -1,15 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
 import Wishlist from "./Wishlist";
 
 function Home(props) {
   return (
     <div>
-      <Navbar />
-      <Wishlist />
-      <Link to="/FakeStore">Fakestore</Link>
-      <Link to="/Makeup">Makeup</Link>
+      <h1 className="homeHeader">My Wishlist</h1>
+      <div className="homeContainer">
+        <div className="wishlistContainer">
+          <Wishlist />
+        </div>
+        <div className="storeContainer">
+          <Link to="/FakeStore" className="fakestoreLinkHome">
+            Fakestore
+          </Link>
+          <Link to="/Makeup" className="makeupLinkHome">
+            Makeup
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
