@@ -19,7 +19,6 @@ function ToyCarStore(props) {
     //Displays all products when function is called
     let displayAllProducts = () => {
         return products.map((item, i) => {
-            console.log(item.product);
             return (
                 <div className="toyCar-container">
                     <img src={item.product.image} className="toyCar-img" />
@@ -55,7 +54,7 @@ function ToyCarStore(props) {
     function sortByHigh() {
         setProducts(
             [...products].sort((a, b) => {
-                return Number(b.price) - Number(a.price);
+                return Number(b.product.price) - Number(a.product.price);
             })
         );
     }
@@ -64,7 +63,7 @@ function ToyCarStore(props) {
     function sortByLow() {
         setProducts(
             [...products].sort((a, b) => {
-                return Number(a.price) - Number(b.price);
+                return Number(a.product.price) - Number(b.product.price);
             })
         );
     }
