@@ -18,17 +18,18 @@ function ToyCarStore(props) {
 
     //Displays all products when function is called
     let displayAllProducts = () => {
-        return products.map((product, i) => {
+        return products.map((item, i) => {
+            console.log(item.product);
             return (
-                <div className="makeupJsProductContainer">
-                    <img src={product.image_link} className="makeupJsImages" />
-                    <div className="makeupJsname">
-                        <b>{product.name}</b>
+                <div className="toyCar-container">
+                    <img src={item.product.image} className="toyCar-img" />
+                    <div className="toyCar-name">
+                        <b>{item.product.name}</b>
                     </div>
-                    <div className="makeupJsprice">${product.price}</div>
+                    <div className="toyCar-price">${item.product.price}</div>
                     <button
-                        className="makeupJsAddButton"
-                        onClick={() => addToWishlist(product)}
+                        className="toyCar-button"
+                        onClick={() => addToWishlist(item.product)}
                     >
                         Add to Wishlist
           </button>
@@ -42,7 +43,7 @@ function ToyCarStore(props) {
         let product = {
             name: item.name,
             price: item.price,
-            image: item.image_link,
+            image: item.image,
         };
         console.log(product);
         axios.post(`https://ironrest.herokuapp.com/wishlist`, {

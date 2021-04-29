@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 
+
 function Home(props) {
   return (
     <div className="bodyDiv">
@@ -47,7 +48,7 @@ function Home(props) {
             </div>
 
             <div className="storeContainer">
-              <Link to="/NewItem" className="newItemLink">
+              <Link to="/Games" className="newItemLink">
                 <img src="https://logos-world.net/wp-content/uploads/2020/10/Steam-Logo.png" /> <br />
                 <h3>Steam Games</h3>
               </Link>
@@ -72,6 +73,7 @@ function Home(props) {
             </div>
 
           </div>
+
 
         </div>
       </div>

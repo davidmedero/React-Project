@@ -238,6 +238,13 @@
   margin-bottom: 10px;
 }
 
+.gamesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+}
 .header-div {
   display: flex;
   justify-content: center;
@@ -247,4 +254,27 @@
 
 .header-div img {
   height: 400px;
+}
+
+.toyCar-img {
+  width: 300px;
+}
+
+.toyCar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.toyCar-name {
+  margin-bottom: 10px;
+}
+
+.toyCar-price {
+  margin-bottom: 10px;
+}
+
+.toyCar-button {
+  margin-bottom: 80px;
 }
