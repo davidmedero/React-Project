@@ -7,6 +7,7 @@
   display: flex;
   /* justify-content: space-around; */
   margin-top: 100px;
+  justify-content: center;
 }
 
 .wishlistTotal {
@@ -20,6 +21,7 @@
 .storeContainer {
   display: flex;
   flex-direction: column;
+  border: 3px double black;
 }
 
 .makeupLinkHome {
@@ -31,7 +33,18 @@
 }
 
 .makeupItemContainer {
-  margin: 70px 0;
+  padding: 10px;
+  margin-bottom: 70px 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.makeupRemoveButton {
+  width: 150px;
+  border-radius: 50px;
+  background-color: darkred;
+  color: white;
 }
 
 .fakestoreItemContainer {
@@ -40,6 +53,7 @@
 
 .makeupImages {
   margin-bottom: 30px;
+  width: 200px;
 }
 
 .fakestoreImages {
@@ -129,13 +143,9 @@
   margin-top: 50px;
 }
 
-img {
-  width: 50px;
-}
-
-.storeContainer img {
-  width: 200px;
-  padding-top: 50px;
+.allStoreContainer img {
+  width: 700px;
+  flex-direction: column;
 }
 
 .bodyDiv {
@@ -143,5 +153,128 @@ img {
 }
 
 .wishlistContainer {
-  width: 40vw;
+  width: 30vw;
+  border: 3px double black;
+  margin-right: 10px;
+}
+
+.storeContainer {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  text-align: center;
+}
+
+.storeContainer img {
+  width: 200px;
+}
+
+.storesRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.newItem-mainContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.newItem-nameContainer {
+  margin-top: 20px;
+}
+
+
+.newItem-priceContainer {
+  margin-top: 20px;
+}
+
+.newItem-button {
+  margin-top: 20px;
+}
+
+.navbar {
+  height: 100px;
+  width: 300px;
+  background-color: darkolivegreen;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+.navbar-div {
+  font-size: 24px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: red;
+}
+
+.fakeStore-mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fakeStore-button-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.fakeStore-button {
+  height: 30px;
+  width: 100px;
+}
+
+.wishlist-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.gamesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+}
+.header-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-div img {
+  height: 400px;
+}
+
+.toyCar-img {
+  width: 300px;
+}
+
+.toyCar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.toyCar-name {
+  margin-bottom: 10px;
+}
+
+.toyCar-price {
+  margin-bottom: 10px;
+}
+
+.toyCar-button {
+  margin-bottom: 80px;
 }

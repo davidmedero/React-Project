@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import SearchBar from "./SearchBar";
 
 function FakeStore(props) {
-  const [products, setProducts] = useState([]); //Holds all products from API
+  const [products, setProducts] = useState([]); // Holds all products from API
+  const [search, setSearch] = useState(""); // Search Bar state
+  const [filteredProducts, setFilteredProducts] = useState([]); // Filters products based on seach input
 
   // Imports API from online
   useEffect(() => {
@@ -14,43 +15,19 @@ function FakeStore(props) {
     });
   }, []);
 
-  //Displays all products when function is called
-  let displayAllProducts = () => {
-    return products.map((product, i) => {
-      return (
-        <div className="fakestoreJsProductContainer">
-          <img src={product.image} className="fakestoreJsImages" />
-          <div className="fakestoreJsTitle">
-            <b>{product.title}</b>
-          </div>
-          <div className="fakestoreJsPrice">${product.price}</div>
-          <div className="fakestoreJsDescription">{product.description}</div>
-          <button
-            className="fakestoreJsAddButton"
-            onClick={() => addToWishlist(product)}
-          >
-            Add to Wishlist
-          </button>
-        </div>
-      );
-    });
-  };
-
-
   // Post product to Wishlist API
   function addToWishlist(item) {
     let product = {
       name: item.title,
       price: item.price,
-      image: item.image
+      image: item.image,
     };
     axios.post(`https://ironrest.herokuapp.com/wishlist`, {
       product: product,
     });
   }
 
-
-  //Sort product list by Highest price
+  //Sort products by Highest price
   function sortByHigh() {
     setProducts(
       [...products].sort((a, b) => {
@@ -59,7 +36,7 @@ function FakeStore(props) {
     );
   }
 
-  //Sort product list by Lowest price
+  //Sort products by Lowest price
   function sortByLow() {
     setProducts(
       [...products].sort((a, b) => {
@@ -68,6 +45,14 @@ function FakeStore(props) {
     );
   }
 
+  //Sort products by Search Input
+  useEffect(() => {
+    setFilteredProducts(
+      products.filter((product) => {
+        return product.title.toLowerCase().includes(search.toLowerCase());
+      })
+    );
+  }, [search, products]);
 
   //Display on screen
   return (
@@ -76,7 +61,29 @@ function FakeStore(props) {
       Sort By:
       <button onClick={() => sortByHigh()}>Highest Price</button>
       <button onClick={() => sortByLow()}>Lowest Price</button>
-      <div>{displayAllProducts()}</div>
+      <input
+        type="text"
+        placeholder="Search"
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      {filteredProducts.map((product, i) => {
+        return (
+          <div className="fakestoreJsProductContainer">
+            <img src={product.image} className="fakestoreJsImages" />
+            <div className="fakestoreJsTitle">
+              <b>{product.title}</b>
+            </div>
+            <div className="fakestoreJsPrice">${product.price}</div>
+            <div className="fakestoreJsDescription">{product.description}</div>
+            <button
+              className="fakestoreJsAddButton"
+              onClick={() => addToWishlist(product)}
+            >
+              Add to Wishlist
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 }
