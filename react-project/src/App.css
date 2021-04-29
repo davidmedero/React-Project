@@ -237,3 +237,11 @@
   justify-content: space-around;
   margin-bottom: 10px;
 }
+
+.gamesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+}

@@ -45,7 +45,7 @@ function Home(props) {
             </div>
 
             <div className="storeContainer">
-              <Link to="/NewItem" className="newItemLink">
+              <Link to="/Games" className="newItemLink">
                 <img src="https://logos-world.net/wp-content/uploads/2020/10/Steam-Logo.png" /> <br />
                 <h3>Steam Games</h3>
               </Link>
