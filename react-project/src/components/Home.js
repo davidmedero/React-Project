@@ -6,7 +6,10 @@ function Home(props) {
   return (
     <div className="bodyDiv">
 
-      <h1 className="homeHeader">My Wishlist</h1>
+      <div className="header-div">
+        <h1 className="homeHeader">My Wishlist</h1>
+        <img src={"https://previews.123rf.com/images/bestforbest/bestforbest2001/bestforbest200100047/138514486-wishlist-isometric-vector-banner-smartphone-with-a-heart-and-a-list-with-checkmarks-of-favorite-wish.jpg"} />
+      </div>
 
       <div className="homeContainer">
 
@@ -50,8 +53,16 @@ function Home(props) {
               </Link>
             </div>
 
+          </div>
 
+          <div>
 
+            <div className="storeContainer">
+              <Link to="/NewStore" className="newItemLink">
+                <img src="https://logos-world.net/wp-content/uploads/2020/10/Steam-Logo.png" /> <br />
+                <h3>New Store</h3>
+              </Link>
+            </div>
 
           </div>
 

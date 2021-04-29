@@ -2,37 +2,37 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
 
-function NewItem(props) {
-    // Declare object "newItem" with an object "product" inside.
-    // Inside object "product" theres a default image url stored
-    const [newItem, setNewItem] = useState({ product: { image: "https://cdn.pixabay.com/photo/2017/10/18/14/31/box-2864335_960_720.png" } })
+function NewStore(props) {
 
-    //Takes user input and stores data in object called newItem
+
+
+    let [newProduct, setNewProduct] = useState({ product: {} })
+
     function handleChange(e) {
         e.persist()
-        newItem.product[e.target.name] = e.target.value
-        setNewItem(newItem)
+        newProduct.product[e.target.name] = e.target.value
+        setNewProduct(newProduct)
     }
 
-    //Stores new item in Wishlist API
     function handleSubmit(e) {
         e.preventDefault()
-        axios.post("https://ironrest.herokuapp.com/wishlist", newItem)
+        axios.post("https://ironrest.herokuapp.com/newDummyStore", newProduct)
     }
+
 
 
     //Display on screen
     return (
-        <div className="newItem-mainContainer">
+        <div className="newProduct-mainContainer">
 
             <div className="navbar">
                 <Navbar />
-                <h2>Enter information about your product below!</h2>
+                <h2>Push Product to NEW STORE</h2>
             </div>
 
             <form onSubmit={handleSubmit}>
 
-                <div className="newItem-nameContainer">
+                <div className="neItemt-nameContainer">
                     <label>Product Name:</label> <br />
                     <input type="text" name="name" onChange={handleChange}></input> <br />
                 </div>
@@ -40,6 +40,11 @@ function NewItem(props) {
                 <div className="newItem-priceContainer">
                     <label>Price:</label> <br />
                     <input type="text" name="price" onChange={handleChange}></input ><br />
+                </div>
+
+                <div className="newItem-priceContainer">
+                    <label>Image URL:</label> <br />
+                    <input type="text" name="image" onChange={handleChange}></input ><br />
                 </div>
 
                 <button className="newItem-button" type="submit" value="Submit">Add New</button>
@@ -50,5 +55,4 @@ function NewItem(props) {
     );
 }
 
-export default NewItem;
-
+export default NewStore;
