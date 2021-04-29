@@ -3,8 +3,9 @@ import axios from "axios";
 import Navbar from "./Navbar";
 
 function Makeup(props) {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]); //Holds all products from API
 
+  // Imports API from online
   useEffect(() => {
     axios
       .get(
@@ -15,7 +16,8 @@ function Makeup(props) {
       });
   }, []);
 
-  let allProducts = () => {
+  //Displays all products when function is called
+  let displayAllProducts = () => {
     return products.map((product, i) => {
       return (
         <div className="makeupJsProductContainer">
@@ -37,6 +39,8 @@ function Makeup(props) {
     });
   };
 
+
+  // Post product to Wishlist API
   function addToWishlist(item) {
     console.log(item);
     let product = {
@@ -50,6 +54,8 @@ function Makeup(props) {
     });
   }
 
+
+  //Sort product list by Highest price
   function sortByHigh() {
     setProducts(
       [...products].sort((a, b) => {
@@ -59,6 +65,7 @@ function Makeup(props) {
     console.log(products);
   }
 
+  //Sort product list by Lowest price
   function sortByLow() {
     setProducts(
       [...products].sort((a, b) => {
@@ -67,13 +74,15 @@ function Makeup(props) {
     );
   }
 
+
+  //Display on screen
   return (
     <div>
       <Navbar />
       Sort By:
       <button onClick={() => sortByHigh()}>Highest Price</button>
       <button onClick={() => sortByLow()}>Lowest Price</button>
-      <div>{allProducts()}</div>
+      <div>{displayAllProducts()}</div>
     </div>
   );
 }

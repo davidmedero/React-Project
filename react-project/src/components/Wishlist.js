@@ -2,21 +2,18 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Wishlist(props) {
-  let [wishlist, setWishlist] = useState([]);
+  let [wishlist, setWishlist] = useState([]); //Holds all products from API
 
+  // Imports our Wishlist API from online
   useEffect(() => {
     axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
       setWishlist(res.data);
     });
   }, []);
 
-  function refreshMakeupPage() {
-    axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
-      setWishlist(res.data);
-    });
-  }
 
 
+  //Displays all products when function is called
   let displayWishlist = () => {
     return wishlist.map((item) => {
       return (
@@ -28,7 +25,7 @@ function Wishlist(props) {
 
           <button
             className="makeupRemoveButton"
-            onClick={() => removeMakeup(item)}
+            onClick={() => removeProduct(item)}
           >
             Remove Item
           </button>
@@ -37,40 +34,45 @@ function Wishlist(props) {
     });
   };
 
-  let removeMakeup = (item) => {
+
+  //Removes single product from Wishlist
+  let removeProduct = (item) => {
     axios
       .delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`)
-      .then(() => refreshMakeupPage());
+      .then(() => refreshPage());
   };
 
+
+  //Reloads the page
+  function refreshPage() {
+    axios.get(`https://ironrest.herokuapp.com/wishlist`).then((res) => {
+      setWishlist(res.data);
+    });
+  }
+
+
+  //Clears entire wishlist array
   const clearWishlist = () => {
     return wishlist.map((item) => {
       console.log(item);
       axios
         .delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`)
-        .then(() => refreshMakeupPage());
+        .then(() => refreshPage());
     });
   };
 
 
-
-
-
-
-
-  // need to change the if statement
+  //Display amount of products in wishlist
   let wishlistQuantity = () => {
-    // if (fakestoreWishlist.length > 0 || wishlist.length > 0) {
-    //   return "Quantity:  " + (fakestoreWishlist.length + wishlist.length);
-    // } else {
-    //   return "Add some products!!!";
-    // }
+    if (wishlist.length > 0) {
+      return "Quantity:  " + wishlist.length;
+    } else {
+      return "Add some products!!!";
+    }
   };
 
 
-
-
-  // Calculate Sum of all items
+  // Calculate Sum of all items - can be combined with below?
   const makeupTotalSum = () => {
     return wishlist.reduce(
       (sum, item) => sum + Number(item.product.price),
@@ -78,7 +80,7 @@ function Wishlist(props) {
     );
   };
 
-  // Display Sum of all items
+  // Display Sum of all items - can be combined with above?
   let totalSum = (item) => {
     if (wishlist.length > 0 || wishlist.length > 0) {
       return (
@@ -93,8 +95,7 @@ function Wishlist(props) {
   };
 
 
-
-  // Sorting by Highest Price
+  //Sort product list by Highest price
   function sortByHigh() {
     setWishlist(
       [...wishlist].sort((a, b) => {
@@ -103,7 +104,7 @@ function Wishlist(props) {
     );
   }
 
-  // Sorting by Lowest Price
+  //Sort product list by Lowest price
   function sortByLow() {
     setWishlist(
       [...wishlist].sort((a, b) => {
@@ -112,6 +113,8 @@ function Wishlist(props) {
     );
   }
 
+
+  //Display on screen
   return (
     <div>
       <div>

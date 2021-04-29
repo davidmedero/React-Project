@@ -4,15 +4,17 @@ import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 
 function FakeStore(props) {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]); //Holds all products from API
 
+  // Imports API from online
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products`).then((res) => {
       setProducts(res.data);
     });
   }, []);
 
-  let allProducts = () => {
+  //Displays all products when function is called
+  let displayAllProducts = () => {
     return products.map((product, i) => {
       return (
         <div className="fakestoreJsProductContainer">
@@ -33,8 +35,9 @@ function FakeStore(props) {
     });
   };
 
+
+  // Post product to Wishlist API
   function addToWishlist(item) {
-    console.log(item);
     let product = {
       name: item.title,
       price: item.price,
@@ -46,6 +49,8 @@ function FakeStore(props) {
     });
   }
 
+
+  //Sort product list by Highest price
   function sortByHigh() {
     setProducts(
       [...products].sort((a, b) => {
@@ -54,6 +59,7 @@ function FakeStore(props) {
     );
   }
 
+  //Sort product list by Lowest price
   function sortByLow() {
     setProducts(
       [...products].sort((a, b) => {
@@ -62,13 +68,15 @@ function FakeStore(props) {
     );
   }
 
+
+  //Display on screen
   return (
     <div>
       <Navbar />
       Sort By:
       <button onClick={() => sortByHigh()}>Highest Price</button>
       <button onClick={() => sortByLow()}>Lowest Price</button>
-      <div>{allProducts()}</div>
+      <div>{displayAllProducts()}</div>
     </div>
   );
 }
