@@ -245,3 +245,13 @@
   flex-direction: column;
   margin: 30px;
 }
+.header-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-div img {
+  height: 400px;
+}
