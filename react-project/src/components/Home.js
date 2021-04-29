@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 
+
 function Home(props) {
   return (
     <div className="bodyDiv">
@@ -43,12 +44,8 @@ function Home(props) {
               </Link>
             </div>
 
-
-
-
-
-
           </div>
+
 
         </div>
       </div>
