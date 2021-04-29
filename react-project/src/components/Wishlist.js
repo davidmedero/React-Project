@@ -54,7 +54,6 @@ function Wishlist(props) {
   //Clears entire wishlist array
   const clearWishlist = () => {
     return wishlist.map((item) => {
-      console.log(item);
       axios
         .delete(`https://ironrest.herokuapp.com/wishlist/${item._id}`)
         .then(() => refreshPage());
@@ -99,7 +98,7 @@ function Wishlist(props) {
   function sortByHigh() {
     setWishlist(
       [...wishlist].sort((a, b) => {
-        return Number(b.price) - Number(a.price);
+        return Number(b.product.price) - Number(a.product.price);
       })
     );
   }
@@ -108,7 +107,7 @@ function Wishlist(props) {
   function sortByLow() {
     setWishlist(
       [...wishlist].sort((a, b) => {
-        return Number(a.price) - Number(b.price);
+        return Number(a.product.price) - Number(b.product.price);
       })
     );
   }

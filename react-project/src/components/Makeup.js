@@ -42,13 +42,11 @@ function Makeup(props) {
 
   // Post product to Wishlist API
   function addToWishlist(item) {
-    console.log(item);
     let product = {
       name: item.name,
       price: item.price,
       image: item.image_link
     };
-    console.log(product);
     axios.post(`https://ironrest.herokuapp.com/wishlist`, {
       product: product,
     });
@@ -62,7 +60,6 @@ function Makeup(props) {
         return Number(b.price) - Number(a.price);
       })
     );
-    console.log(products);
   }
 
   //Sort product list by Lowest price

@@ -43,7 +43,6 @@ function FakeStore(props) {
       price: item.price,
       image: item.image
     };
-    console.log(product);
     axios.post(`https://ironrest.herokuapp.com/wishlist`, {
       product: product,
     });
