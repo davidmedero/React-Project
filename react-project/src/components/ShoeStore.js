@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 
-function ToyCarStore(props) {
+function ShoeStore(props) {
     const [products, setProducts] = useState([]); //Holds all products from API
 
     // Imports API from online
     useEffect(() => {
         axios
             .get(
-                `https://ironrest.herokuapp.com/newDummyStore`
+                `https://ironrest.herokuapp.com/ShoeStore`
             )
             .then((res) => {
                 setProducts(res.data);
@@ -90,4 +90,4 @@ function ToyCarStore(props) {
     );
 }
 
-export default ToyCarStore;
+export default ShoeStore;

@@ -5,8 +5,11 @@ import { Switch, Route } from "react-router-dom";
 import FakeStore from "./components/FakeStore";
 import Makeup from "./components/Makeup";
 import NewItem from "./components/NewItem";
+import Games from "./components/Games";
 import NewStore from "./components/newStore";
 import ToyCarStore from "./components/ToyCarStore";
+import ShoeStore from "./components/ShoeStore";
+
 
 function App() {
   return (
@@ -16,8 +19,10 @@ function App() {
         <Route exact path="/fakestore" component={FakeStore} />
         <Route exact path="/Makeup" component={Makeup} />
         <Route exact path="/NewItem" component={NewItem} />
+        <Route exact path="/Games" component={Games} />
         <Route exact path="/NewStore" component={NewStore} />
         <Route exact path="/ToyCarStore" component={ToyCarStore} />
+        <Route exact path="/ShoeStore" component={ShoeStore} />
       </Switch>
     </div>
   );

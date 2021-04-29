@@ -56,7 +56,7 @@ function Home(props) {
 
           </div>
 
-          <div>
+          <div className="storesRow">
 
             <div className="storeContainer">
               <Link to="/NewStore" className="newItemLink">
@@ -74,6 +74,17 @@ function Home(props) {
 
           </div>
 
+          <div className="storesRow">
+
+            <div className="storeContainer">
+              <Link to="/ShoeStore" className="newItemLink">
+                <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F04%2Ftyler-the-creator-converse-artist-series-Spencer-McMullen-8.jpg?w=1600&cbr=1&q=90&fit=max" /> <br />
+                <h3>Shoe Store</h3>
+              </Link>
+
+            </div>
+
+          </div>
 
         </div>
       </div>
