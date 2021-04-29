@@ -16,7 +16,7 @@ function NewStore(props) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        axios.post("https://ironrest.herokuapp.com/newDummyStore", newProduct)
+        axios.post("https://ironrest.herokuapp.com/ShoeStore", newProduct)
     }
 
 

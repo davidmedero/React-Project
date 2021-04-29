@@ -64,6 +64,13 @@ function Home(props) {
               </Link>
             </div>
 
+            <div className="storeContainer">
+              <Link to="/ToyCarStore" className="newItemLink">
+                <img src="https://ae01.alicdn.com/kf/HTB1CoJNKr1YBuNjSszhq6AUsFXaC/1-24-LX570-Alloy-Metal-Model-Pull-Back-Toy-Cars-Light-Sound-Diecast-Vehicle-Toys-Car.jpg_q50.jpg" /> <br />
+                <h3>Toy Car</h3>
+              </Link>
+            </div>
+
           </div>
 
         </div>
