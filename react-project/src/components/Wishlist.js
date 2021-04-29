@@ -14,6 +14,7 @@ function Wishlist(props) {
   //Displays all products when function is called
   let displayWishlist = () => {
     return wishlist.map((item) => {
+      console.log(item);
       return (
         <div className="makeupItemContainer">
           <img src={item.product.image} className="makeupImages" />
