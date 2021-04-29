@@ -24,21 +24,26 @@ function NewItem(props) {
 
     //Display on screen
     return (
-        <div>
-            <Navbar />
+        <div className="newItem-mainContainer">
+
+            <div className="navbar">
+                <Navbar />
+                <h2>Enter information about your product below!</h2>
+            </div>
+
             <form onSubmit={handleSubmit}>
 
-                <div>
-                    <label>Product Name:</label>
-                    <input type="text" name="name" onChange={handleChange}></input>
+                <div className="newItem-nameContainer">
+                    <label>Product Name:</label> <br />
+                    <input type="text" name="name" onChange={handleChange}></input> <br />
                 </div>
 
-                <div>
-                    <label>Price:</label>
+                <div className="newItem-priceContainer">
+                    <label>Price:</label> <br />
                     <input type="text" name="price" onChange={handleChange}></input ><br />
                 </div>
 
-                <button type="submit" value="Submit">Add New</button>
+                <button className="newItem-button" type="submit" value="Submit">Add New</button>
 
             </form>
 

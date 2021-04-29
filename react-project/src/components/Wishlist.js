@@ -129,19 +129,20 @@ function Wishlist(props) {
   return (
     <div>
       <div>
-        <button
-          onClick={() => {
-            clearWishlist();
-          }}
-        >
-          Clear All
-        </button>
-        <button onClick={sortByHigh}>Highest Price</button>
-        <button onClick={sortByLow}>Lowest Price</button>
-        <button onClick={sortByAtoZ}>A to Z</button>
-        <button onClick={sortByZtoA}>Z to A</button>
-        <span className="wishlistTotal">{wishlistQuantity()}</span>
-        <span className="wishlistSum">{totalSum()}</span>
+
+        <div className="wishlist-buttons">
+          <button onClick={() => { clearWishlist() }} >Clear All</button>
+          <span className="wishlistTotal">{wishlistQuantity()}</span>
+          <span className="wishlistSum">{totalSum()}</span>
+        </div>
+
+        <div className="wishlist-buttons">
+          <button onClick={sortByHigh}>Highest Price</button>
+          <button onClick={sortByLow}>Lowest Price</button>
+          <button onClick={sortByAtoZ}>A to Z</button>
+          <button onClick={sortByZtoA}>Z to A</button>
+        </div>
+
       </div>
 
       {displayWishlist()}
