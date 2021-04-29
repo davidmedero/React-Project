@@ -39,19 +39,18 @@ function Makeup(props) {
     });
   };
 
-
   // Post product to Wishlist API
   function addToWishlist(item) {
     let product = {
       name: item.name,
       price: item.price,
-      image: item.image_link
+      image: item.image_link,
     };
+    console.log(product);
     axios.post(`https://ironrest.herokuapp.com/wishlist`, {
       product: product,
     });
   }
-
 
   //Sort product list by Highest price
   function sortByHigh() {
@@ -70,7 +69,6 @@ function Makeup(props) {
       })
     );
   }
-
 
   //Display on screen
   return (

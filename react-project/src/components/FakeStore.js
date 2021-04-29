@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import SearchBar from "./SearchBar";
 
 function FakeStore(props) {
   const [products, setProducts] = useState([]); //Holds all products from API
@@ -35,19 +34,17 @@ function FakeStore(props) {
     });
   };
 
-
   // Post product to Wishlist API
   function addToWishlist(item) {
     let product = {
       name: item.title,
       price: item.price,
-      image: item.image
+      image: item.image,
     };
     axios.post(`https://ironrest.herokuapp.com/wishlist`, {
       product: product,
     });
   }
-
 
   //Sort product list by Highest price
   function sortByHigh() {
@@ -66,7 +63,6 @@ function FakeStore(props) {
       })
     );
   }
-
 
   //Display on screen
   return (
