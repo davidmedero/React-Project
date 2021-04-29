@@ -3,6 +3,8 @@ import axios from "axios";
 
 function Wishlist(props) {
   let [wishlist, setWishlist] = useState([]); //Holds all products from API
+  const [search, setSearch] = useState(""); // Search Bar state
+  const [filteredProducts, setFilteredProducts] = useState([]); // Filters products based on seach input
 
   // Imports our Wishlist API from online
   useEffect(() => {
@@ -10,27 +12,6 @@ function Wishlist(props) {
       setWishlist(res.data);
     });
   }, []);
-
-  //Displays all products when function is called
-  let displayWishlist = () => {
-    return wishlist.map((item) => {
-      console.log(item);
-      return (
-        <div className="makeupItemContainer">
-          <img src={item.product.image} className="makeupImages" />
-          <div className="makeupName">{item.product.name}</div>
-          <div className="makeupPrice">${item.product.price}</div>
-
-          <button
-            className="makeupRemoveButton"
-            onClick={() => removeProduct(item)}
-          >
-            Remove Item
-          </button>
-        </div>
-      );
-    });
-  };
 
   //Removes single product from Wishlist
   let removeProduct = (item) => {
@@ -126,13 +107,27 @@ function Wishlist(props) {
     );
   }
 
+  //Sort products by Search Input
+  useEffect(() => {
+    setFilteredProducts(
+      wishlist.filter((item) => {
+        return item.product.name.toLowerCase().includes(search.toLowerCase());
+      })
+    );
+  }, [search, wishlist]);
+
   //Display on screen
   return (
     <div>
       <div>
-
         <div className="wishlist-buttons">
-          <button onClick={() => { clearWishlist() }} >Clear All</button>
+          <button
+            onClick={() => {
+              clearWishlist();
+            }}
+          >
+            Clear All
+          </button>
           <span className="wishlistTotal">{wishlistQuantity()}</span>
           <span className="wishlistSum">{totalSum()}</span>
         </div>
@@ -143,10 +138,28 @@ function Wishlist(props) {
           <button onClick={sortByAtoZ}>A to Z</button>
           <button onClick={sortByZtoA}>Z to A</button>
         </div>
-
       </div>
+      <input
+        type="text"
+        placeholder="Search"
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      {filteredProducts.map((item, i) => {
+        return (
+          <div className="makeupItemContainer">
+            <img src={item.product.image} className="makeupImages" />
+            <div className="makeupName">{item.product.name}</div>
+            <div className="makeupPrice">${item.product.price}</div>
 
-      {displayWishlist()}
+            <button
+              className="makeupRemoveButton"
+              onClick={() => removeProduct(item)}
+            >
+              Remove Item
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 }
