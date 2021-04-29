@@ -5,7 +5,7 @@
 
 .homeContainer {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   margin-top: 100px;
 }
 
@@ -131,4 +131,17 @@
 
 img {
   width: 50px;
+}
+
+.storeContainer img {
+  width: 200px;
+  padding-top: 50px;
+}
+
+.bodyDiv {
+  height: 100vw;
+}
+
+.wishlistContainer {
+  width: 40vw;
 }

@@ -4,7 +4,7 @@ import Wishlist from "./Wishlist";
 
 function Home(props) {
   return (
-    <div>
+    <div className="bodyDiv">
 
       <h1 className="homeHeader">My Wishlist</h1>
 
@@ -15,16 +15,26 @@ function Home(props) {
         </div>
 
         <div className="storeContainer">
-
-          <Link to="/FakeStore" className="fakestoreLinkHome">
-            Fakestore
+          <div>
+            <Link to="/FakeStore" className="fakestoreLinkHome">
+              <img src="https://dynamic.brandcrowd.com/asset/logo/a7113a63-6440-47bd-8e20-ce74be61571c/logo?v=4" /> <br />
+            Fake Store
           </Link>
+          </div>
 
-          <Link to="/Makeup" className="makeupLinkHome">
-            Makeup
+          <div>
+            <Link to="/Makeup" className="makeupLinkHome">
+              <img src="https://dynamic.brandcrowd.com/asset/logo/a7113a63-6440-47bd-8e20-ce74be61571c/logo?v=4" /> <br />
+              Makeup
           </Link>
+          </div>
 
-          <Link to="/NewItem" className="newItemLink">Add Your Own Item</Link>
+          <div>
+            <Link to="/NewItem" className="newItemLink">
+              <img src="https://dynamic.brandcrowd.com/asset/logo/a7113a63-6440-47bd-8e20-ce74be61571c/logo?v=4" /> <br />
+              Add Your Own Item
+              </Link>
+          </div>
 
         </div>
       </div>
