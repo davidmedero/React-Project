@@ -8,9 +8,7 @@ function NewStore(props) {
 
   useEffect(() => {
     axios
-      .get(
-        `https://ironrest.herokuapp.com/accessoriesStore`
-      )
+      .get(`https://ironrest.herokuapp.com/ShoeStore`)
       .then((res) => {
         setProducts(res.data);
       });
@@ -24,7 +22,7 @@ function NewStore(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios.post("https://ironrest.herokuapp.com/accessoriesStore", newProduct);
+    axios.post("https://ironrest.herokuapp.com/ShoeStore", newProduct);
   }
 
 
@@ -39,7 +37,7 @@ function NewStore(props) {
           <div className="toyCar-price">${item.product.price}</div>
           <button
             className="toyCar-button"
-            onClick={() => removeProduct(item.product)}
+            onClick={() => removeProduct(item)}
           >
             Remove
       </button>
@@ -48,20 +46,22 @@ function NewStore(props) {
     });
   };
 
+  //Removes single product from Wishlist
+  let removeProduct = (item) => {
+    console.log(item);
+    axios
+      .delete(`https://ironrest.herokuapp.com/ShoeStore/${item._id}`)
+      .then(() => refreshPage());
+  };
 
   //Reloads the page
   function refreshPage() {
-    axios.get(`https://ironrest.herokuapp.com/accessoriesStore`).then((res) => {
+    axios.get(`https://ironrest.herokuapp.com/ShoeStore`).then((res) => {
       setProducts(res.data);
     });
   }
 
-  //Removes single product from Wishlist
-  let removeProduct = (item) => {
-    axios
-      .delete(`https://ironrest.herokuapp.com/accessoriesStore/${item._id}`)
-      .then(() => refreshPage());
-  };
+
 
   //Display on screen
   return (

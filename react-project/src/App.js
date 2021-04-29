@@ -9,6 +9,7 @@ import Games from "./components/Games";
 import NewStore from "./components/newStore";
 import ToyCarStore from "./components/ToyCarStore";
 import ShoeStore from "./components/ShoeStore";
+import AccessoriesStore from "./components/AccessoriesStore";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/NewStore" component={NewStore} />
         <Route exact path="/ToyCarStore" component={ToyCarStore} />
         <Route exact path="/ShoeStore" component={ShoeStore} />
+        <Route exact path="/AccessoriesStore" component={AccessoriesStore} />
       </Switch>
     </div>
   );
