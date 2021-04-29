@@ -61,9 +61,12 @@ function Makeup(props) {
   //Display on screen
   return (
     <div className="fakeStore-mainContainer">
-      <div className="navbar">
+      <div>
         <Navbar />
         <h2>Makeup Products</h2>
+      </div>
+      <div className="header-div">
+        <img src="https://media.istockphoto.com/photos/organic-cosmetics-for-makeup-banner-on-light-pink-background-picture-id1178523655"/>
       </div>
 
       <div className="fakeStore-button-div">
