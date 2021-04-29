@@ -55,7 +55,6 @@ function FakeStore(props) {
 
   //Display on screen
   return (
-<<<<<<< HEAD
     <div>
       <Navbar />
       Sort By:
@@ -84,26 +83,6 @@ function FakeStore(props) {
           </div>
         );
       })}
-=======
-    <div className="fakeStore-mainContainer">
-
-      <div className="navbar">
-        <Navbar />
-        <h2> Fake Store Products</h2>
-      </div>
-
-      <div className="fakeStore-button-div">
-        <div>
-          <h3>Sort By:</h3>
-        </div>
-        <div>
-          <button className="fakeStore-button" onClick={() => sortByHigh()}>Highest Price</button>
-          <button className="fakeStore-button" onClick={() => sortByLow()}>Lowest Price</button>
-        </div>
-      </div>
-
-      <div>{displayAllProducts()}</div>
->>>>>>> 557c2f202cc5aecd13d5d506888835d1f2d9c3ab
     </div>
   );
 }

@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 
 function Makeup(props) {
   const [products, setProducts] = useState([]); //Holds all products from API
+  const [search, setSearch] = useState(""); // Search Bar state
+  const [filteredProducts, setFilteredProducts] = useState([]); // Filters products based on seach input
 
   // Imports API from online
   useEffect(() => {
@@ -15,29 +17,6 @@ function Makeup(props) {
         setProducts(res.data);
       });
   }, []);
-
-  //Displays all products when function is called
-  let displayAllProducts = () => {
-    return products.map((product, i) => {
-      return (
-        <div className="makeupJsProductContainer">
-          <img src={product.image_link} className="makeupJsImages" />
-          <div className="makeupJsname">
-            <b>{product.name}</b>
-          </div>
-          <div className="makeupJsrating">Rating: {product.rating}</div>
-          <div className="makeupJsprice">${product.price}</div>
-          <div className="makeupJsdescription">{product.description}</div>
-          <button
-            className="makeupJsAddButton"
-            onClick={() => addToWishlist(product)}
-          >
-            Add to Wishlist
-          </button>
-        </div>
-      );
-    });
-  };
 
   // Post product to Wishlist API
   function addToWishlist(item) {
@@ -70,6 +49,15 @@ function Makeup(props) {
     );
   }
 
+  //Sort products by Search Input
+  useEffect(() => {
+    setFilteredProducts(
+      products.filter((product) => {
+        return product.name.toLowerCase().includes(search.toLowerCase());
+      })
+    );
+  }, [search, products]);
+
   //Display on screen
   return (
     <div className="fakeStore-mainContainer">
@@ -85,9 +73,32 @@ function Makeup(props) {
         <div>
           <button onClick={() => sortByHigh()}>Highest Price</button>
           <button onClick={() => sortByLow()}>Lowest Price</button>
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          {filteredProducts.map((product, i) => {
+            return (
+              <div className="makeupJsProductContainer">
+                <img src={product.image_link} className="makeupJsImages" />
+                <div className="makeupJsname">
+                  <b>{product.name}</b>
+                </div>
+                <div className="makeupJsrating">Rating: {product.rating}</div>
+                <div className="makeupJsprice">${product.price}</div>
+                <div className="makeupJsdescription">{product.description}</div>
+                <button
+                  className="makeupJsAddButton"
+                  onClick={() => addToWishlist(product)}
+                >
+                  Add to Wishlist
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
-      <div>{displayAllProducts()}</div>
     </div>
   );
 }
