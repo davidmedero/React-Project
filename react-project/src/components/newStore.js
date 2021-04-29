@@ -13,7 +13,7 @@ function NewStore(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios.post("https://ironrest.herokuapp.com/ShoeStore", newProduct);
+    axios.post("https://ironrest.herokuapp.com/accessoriesStore", newProduct);
   }
 
   //Display on screen
