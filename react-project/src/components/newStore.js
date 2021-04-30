@@ -74,7 +74,7 @@ function NewStore(props) {
 
   //Display on screen
   return (
-    <div>
+    <div className="fakeStore-mainContainer">
       <div className="newProduct-mainContainer">
         <div className="navbar">
           <Navbar />

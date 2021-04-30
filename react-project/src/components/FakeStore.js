@@ -58,7 +58,7 @@ function FakeStore(props) {
 
   //Display on screen
   return (
-    <div>
+    <div className="fakeStore-mainContainer">
       <Navbar />
       Sort By:
       <button onClick={() => sortByHigh()}>Highest Price</button>
