@@ -131,7 +131,7 @@ function Games(props) {
             <div className="makeupName">{item.title}</div>
             <div className="makeupPrice">${item.salePrice}</div>
             <button
-              className="toyCar-button"
+              className="addToWishlistButton"
               onClick={() => addToWishlist(item)}
             >
               Add to Wishlist

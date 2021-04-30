@@ -1,8 +1,3 @@
-
-
-
-
-
 .homeHeader {
   display: flex;
   justify-content: space-around;
@@ -58,6 +53,36 @@ body {
   width: 200px;
 }
 
+.addToWishlistButton {
+  margin-bottom: 80px;
+  width: 150px;
+  border-radius: 50px;
+  border: 3px solid rgb(135, 213, 226);
+  background-color: rgb(132, 215, 119);
+  color: white;
+  transition: all 0.3s ease-in-out;
+  padding: 7px 0;
+  font-family: freude, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 3px #999;
+}
+
+.addToWishlistButton:hover {
+  background-color: rgb(49, 155, 28);
+  transition: all 0.3s ease;
+  border: 3px solid rgb(65, 203, 116);
+  transition: border 0.3s ease-out;
+}
+
+.addToWishlistButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .makeupItemContainer {
   padding: 30px;
   margin-bottom: 70px 0;
@@ -101,6 +126,10 @@ body {
   margin: 70px 0;
 }
 
+.addToStoreDiv img {
+  width: 400px;
+}
+
 .makeupImages {
   margin-bottom: 30px;
   width: 200px;
@@ -132,6 +161,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .fakestoreJsImages {
@@ -153,7 +183,7 @@ body {
 }
 
 .fakestoreJsAddButton {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .makeupJsProductContainer {
@@ -162,11 +192,10 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: white;
+  width: 500px;
 }
 .makeupJsdescription {
-  width: 500px;
-  padding-left: 40px;
-  padding-right: 40px;
+  width: 400px;
 }
 
 .makeupJsImages {
@@ -191,7 +220,7 @@ body {
 }
 
 .makeupJsAddButton {
-  margin-bottom: 85px;
+  margin-bottom: 40px;
 }
 
 .newItemLink {
@@ -282,12 +311,11 @@ body {
 .navbar {
   height: 100px;
   width: 300px;
-  background-color: darkolivegreen;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  padding-bottom: 60px;
 }
 
 .navbar h2 {
@@ -430,11 +458,8 @@ body {
   height: 40vh;
 }
 
-
-
-
 .bannerImage {
-  width: 60vw
+  width: 60vw;
 }
 
 .newItem-mainContainer h2 {
