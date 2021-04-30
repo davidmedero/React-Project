@@ -65,7 +65,7 @@ function Games(props) {
         <Navbar />
         <h2>Games</h2>
       </div>
-      <div className="header-div">
+      <div className="game-header-div">
         <img src="http://www.volt.com/uploadedImages/Blog/how_to_get_a_job_as_a_video_game_tester_banner.jpg" />
       </div>
 
