@@ -99,7 +99,7 @@ function Makeup(props) {
         <h2>Makeup Products</h2>
       </div>
       <div className="header-div">
-        <img src="https://media.istockphoto.com/photos/organic-cosmetics-for-makeup-banner-on-light-pink-background-picture-id1178523655" />
+        <img src="https://identity-mag.com/wp-content/uploads/2017/10/category_makeup_840x400-9wmww.jpg" />
       </div>
 
       <div className="fakeStore-button-div">

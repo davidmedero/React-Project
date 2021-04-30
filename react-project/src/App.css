@@ -390,6 +390,7 @@ body {
   margin-bottom: 80px;
 }
 
+<<<<<<< HEAD
 .sortBy {
   display: flex;
   flex-direction: column;
@@ -400,3 +401,9 @@ body {
 .sortBy h3 {
   margin-bottom: 0;
 }
+=======
+.fakeStore-mainContainer h2 {
+  font-size: 30px;
+}
+
+>>>>>>> 5d923cdac4ad9188a870444f6c9630ee74f276f3
