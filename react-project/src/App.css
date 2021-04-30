@@ -41,7 +41,6 @@ body {
   justify-content: flex-end;
 }
 
-
 .newstoreImg {
   margin-top: -40px;
 }
@@ -289,15 +288,13 @@ body {
 }
 
 .navbar-div {
-  font-size: 24px;
-  border-radius: 50px;
-  background-color: red;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 95vw;
 }
 
-.homeLinkStyle {
-  text-decoration: none;
+.homeIcon {
+  width: 50px;
 }
 
 .fakeStore-mainContainer {
@@ -324,11 +321,11 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
+  margin: 0 3px;
 }
 
 .wishlist-buttons-container {
   display: flex;
-  justify-content: space-around;
   width: 400px;
   padding: 10px 8px;
   margin-top: 5px;
@@ -411,7 +408,7 @@ body {
   font-size: 30px;
 }
 
-.game-header-div img{
+.game-header-div img {
   width: 65vw;
   height: 40vh;
 }
@@ -420,7 +417,7 @@ body {
 
 
 .bannerImage {
-  width: 60vw
+  width: 60vw;
 }
 
 .homePage-storeLogo {

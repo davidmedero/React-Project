@@ -17,24 +17,6 @@ function Games(props) {
     });
   }, []);
 
-  let displayAllProducts = () => {
-    return products.map((product) => {
-      return (
-        <div className="gamesContainer">
-          <img src={product.thumb} className="gamesImages" /> <br></br>
-          <div className="gamesTitle">
-            <b>{product.title}</b>
-          </div>
-          <div className="gamesPrice">${product.salePrice}</div>
-          <br></br>
-          <button onClick={() => addToWishlist(product)}>
-            Add to Wishlist
-          </button>
-        </div>
-      );
-    });
-  };
-
   function addToWishlist(item) {
     let product = {
       name: item.title,
@@ -101,39 +83,34 @@ function Games(props) {
     );
   }, [search, products]);
 
-
   return (
     <div className="fakeStore-mainContainer">
-
+      <Navbar />
       <div>
-        <Navbar />
         <h2>Games</h2>
       </div>
       <div className="game-header-div">
         <img src={videoGameImg} />
       </div>
 
-
-
       <div className="sortBy">
         <div>
           <h3>Sort By:</h3>
         </div>
         <div>
-
           <div className="wishlist-buttons-container">
             <button className="wishlist-buttons" onClick={sortByHigh}>
               Highest Price
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByLow}>
               Lowest Price
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByAtoZ}>
               A to Z
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByZtoA}>
               Z to A
-              </button>
+            </button>
           </div>
 
           <div className="seachBar-div">
@@ -145,7 +122,6 @@ function Games(props) {
             />
           </div>
         </div>
-
       </div>
 
       {filteredProducts.map((item, i) => {
@@ -159,7 +135,7 @@ function Games(props) {
               onClick={() => addToWishlist(item)}
             >
               Add to Wishlist
-          </button>
+            </button>
           </div>
         );
       })}
