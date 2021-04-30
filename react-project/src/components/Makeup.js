@@ -102,58 +102,62 @@ function Makeup(props) {
         <img src="https://identity-mag.com/wp-content/uploads/2017/10/category_makeup_840x400-9wmww.jpg" />
       </div>
 
-      <div className="fakeStore-button-div">
-        <div className="sortBy">
-          <div>
-            <h3>Sort By:</h3>
-          </div>
-          <div>
-            <div className="wishlist-buttons-container">
-              <button className="wishlist-buttons" onClick={sortByHigh}>
-                Highest Price
-              </button>
-              <button className="wishlist-buttons" onClick={sortByLow}>
-                Lowest Price
-              </button>
-              <button className="wishlist-buttons" onClick={sortByAtoZ}>
-                A to Z
-              </button>
-              <button className="wishlist-buttons" onClick={sortByZtoA}>
-                Z to A
-              </button>
-            </div>
 
-            <div className="seachBar-div">
-              <input
-                className="seachBar"
-                type="text"
-                placeholder="Search"
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
-          </div>
+      <div className="sortBy">
+        <div>
+          <h3>Sort By:</h3>
         </div>
 
-        {filteredProducts.map((product, i) => {
-          return (
-            <div className="makeupJsProductContainer">
-              <img src={product.image_link} className="makeupJsImages" />
-              <div className="makeupJsname">
-                <b>{product.name}</b>
-              </div>
-              <div className="makeupJsrating">Rating: {product.rating}</div>
-              <div className="makeupJsprice">${product.price}</div>
-              <div className="makeupJsdescription">{product.description}</div>
-              <button
-                className="makeupJsAddButton"
-                onClick={() => addToWishlist(product)}
-              >
-                Add to Wishlist
+        <div style={{ width: "100%" }}>
+
+          <div className="wishlist-buttons-container">
+            <button className="wishlist-buttons" onClick={sortByHigh}>
+              Highest Price
               </button>
-            </div>
-          );
-        })}
+            <button className="wishlist-buttons" onClick={sortByLow}>
+              Lowest Price
+              </button>
+            <button className="wishlist-buttons" onClick={sortByAtoZ}>
+              A to Z
+              </button>
+            <button className="wishlist-buttons" onClick={sortByZtoA}>
+              Z to A
+              </button>
+          </div>
+
+          <div className="seachBar-div">
+            <input
+              className="seachBar"
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+
+        </div>
+
       </div>
+
+      {filteredProducts.map((product, i) => {
+        return (
+          <div className="makeupJsProductContainer">
+            <img src={product.image_link} className="makeupJsImages" />
+            <div className="makeupJsname">
+              <b>{product.name}</b>
+            </div>
+            <div className="makeupJsrating">Rating: {product.rating}</div>
+            <div className="makeupJsprice">${product.price}</div>
+            <div className="makeupJsdescription">{product.description}</div>
+            <button
+              className="makeupJsAddButton"
+              onClick={() => addToWishlist(product)}
+            >
+              Add to Wishlist
+              </button>
+          </div>
+        );
+      })}
+
       <Fragment>
         <Content />
         <ScrollButton />

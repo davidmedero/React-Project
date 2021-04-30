@@ -28,7 +28,7 @@ function Home(props) {
               <Link to="/FakeStore" className="newItemLink">
                 <img
                   className="homePage-storeLogo"
-                  src="https://dynamic.brandcrowd.com/asset/logo/a7113a63-6440-47bd-8e20-ce74be61571c/logo?v=4" />{" "}
+                  src="https://www.designevo.com/res/templates/thumb_small/yellow-and-blue-shopping-cart.png" />{" "}
                 <br />
                 <h3>Fake Store</h3>
               </Link>
@@ -50,9 +50,11 @@ function Home(props) {
 
             <div className="storeContainer">
               <Link to="/AccessoriesStore" className="newItemLink">
+
                 <img
-                  className="homePage-storeLogo"
-                  src="https://www.anglodiamond.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/G/a/Gabriel-14k-Yellow-Gold-Diamond-Wide-Band-Ladies-Ring-LR51159Y45JJ-3.jpg" />{" "}
+                  className="accessoriesLogo"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd198o5Z1CCwmG_sKKlmfi4TkxvoyDxYplAQ&usqp=CAU" />{" "}
+
                 <br />
                 <h3>Accessories Store</h3>
               </Link>
@@ -78,7 +80,7 @@ function Home(props) {
               <Link to="/ShoeStore" className="newItemLink">
                 <img
                   className="homePage-storeLogo"
-                  src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F04%2Ftyler-the-creator-converse-artist-series-Spencer-McMullen-8.jpg?w=1600&cbr=1&q=90&fit=max" />{" "}
+                  src="https://i.pinimg.com/564x/91/33/b2/9133b2e1d4ea8419759371980ff48fad.jpg" />{" "}
                 <br />
                 <h3>Shoe Store</h3>
               </Link>
@@ -87,11 +89,11 @@ function Home(props) {
             <div className="storeContainer">
               <Link to="/ToyCarStore" className="newItemLink">
                 <img
-                  src="https://ae01.alicdn.com/kf/HTB1CoJNKr1YBuNjSszhq6AUsFXaC/1-24-LX570-Alloy-Metal-Model-Pull-Back-Toy-Cars-Light-Sound-Diecast-Vehicle-Toys-Car.jpg_q50.jpg"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCbrCcrrZnkk2Y01JqUGCwk3EVJnODbP6zsQ&usqp=CAU"
                   className="homePage-storeLogo"
                 />{" "}
                 <br />
-                <h3 className="toyCarHeader">Toy Car</h3>
+                <h3 className="toyCarHeader">Toy Cars</h3>
               </Link>
             </div>
 
@@ -113,7 +115,7 @@ function Home(props) {
               <Link to="/NewItem" className="newItemLink">
                 <img
                   className="homePage-storeLogo"
-                  src="https://rlv.zcache.com/add_your_logo_company_name_stamp-r115ff9b2a67e4c31a1f6c41eb3379e57_6y40n_704.jpg?rlvnet=1" />{" "}
+                  src="https://www.designevo.com/res/templates/thumb_small/black-frame-and-name-jay.png" />{" "}
                 <br />
                 <h3 className="addYourOwnLink">Add Your Own Item</h3>
               </Link>

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -102,7 +103,7 @@ function FakeStore(props) {
           <div>
             <h3>Sort By:</h3>
           </div>
-          <div>
+          <div style={{ width: "100%" }}>
             <div className="wishlist-buttons-container">
               <button className="wishlist-buttons" onClick={sortByHigh}>
                 Highest Price

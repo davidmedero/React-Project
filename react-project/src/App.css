@@ -1,3 +1,8 @@
+
+
+
+
+
 .homeHeader {
   display: flex;
   justify-content: space-around;
@@ -322,11 +327,13 @@ body {
   font-style: normal;
   font-size: 14px;
   margin: 0 3px;
+  border-radius: 10px;
 }
 
 .wishlist-buttons-container {
+  width: 100%;
   display: flex;
-  width: 400px;
+  justify-content: space-around;
   padding: 10px 8px;
   margin-top: 5px;
 }
@@ -399,6 +406,7 @@ body {
   flex-direction: column;
   align-items: center;
   padding-bottom: 10px;
+  width: 400px;
 }
 
 .sortBy h3 {
@@ -412,6 +420,9 @@ body {
   width: 65vw;
   height: 40vh;
 }
+
+
+
 
 .bannerImage {
   width: 60vw

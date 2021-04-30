@@ -96,38 +96,37 @@ function ShoeStore(props) {
         <img src={shoeImg} className="bannerImage" />
       </div>
 
-      <div className="fakeStore-button-div">
-        <div className="sortBy">
-          <div>
-            <h3>Sort By:</h3>
+      <div className="sortBy">
+        <div>
+          <h3>Sort By:</h3>
+        </div>
+        <div style={{ width: "100%" }}>
+          <div className="wishlist-buttons-container">
+            <button className="wishlist-buttons" onClick={sortByHigh}>
+              Highest Price
+              </button>
+            <button className="wishlist-buttons" onClick={sortByLow}>
+              Lowest Price
+              </button>
+            <button className="wishlist-buttons" onClick={sortByAtoZ}>
+              A to Z
+              </button>
+            <button className="wishlist-buttons" onClick={sortByZtoA}>
+              Z to A
+              </button>
           </div>
-          <div>
-            <div className="wishlist-buttons-container">
-              <button className="wishlist-buttons" onClick={sortByHigh}>
-                Highest Price
-              </button>
-              <button className="wishlist-buttons" onClick={sortByLow}>
-                Lowest Price
-              </button>
-              <button className="wishlist-buttons" onClick={sortByAtoZ}>
-                A to Z
-              </button>
-              <button className="wishlist-buttons" onClick={sortByZtoA}>
-                Z to A
-              </button>
-            </div>
 
-            <div className="seachBar-div">
-              <input
-                className="seachBar"
-                type="text"
-                placeholder="Search"
-                onChange={(e) => setSearch(e.target.value)}
-              />
-            </div>
+          <div className="seachBar-div">
+            <input
+              className="seachBar"
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
           </div>
         </div>
       </div>
+
 
       {filteredProducts.map((item, i) => {
         return (

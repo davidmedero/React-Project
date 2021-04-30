@@ -102,20 +102,20 @@ function AccessoriesStore(props) {
                 <div>
                     <h3>Sort By:</h3>
                 </div>
-                <div>
+                <div style={{ width: "100%" }}>
                     <div className="wishlist-buttons-container">
                         <button className="wishlist-buttons" onClick={sortByHigh}>
                             Highest Price
-            </button>
+                          </button>
                         <button className="wishlist-buttons" onClick={sortByLow}>
                             Lowest Price
-            </button>
+                          </button>
                         <button className="wishlist-buttons" onClick={sortByAtoZ}>
                             A to Z
-            </button>
+                          </button>
                         <button className="wishlist-buttons" onClick={sortByZtoA}>
                             Z to A
-            </button>
+                         </button>
                     </div>
 
                     <div className="seachBar-div">

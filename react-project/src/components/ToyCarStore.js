@@ -97,10 +97,12 @@ function ToyCarStore(props) {
       </div>
 
       <div className="fakeStore-button-div">
+
         <div className="sortBy">
           <div>
             <h3>Sort By:</h3>
           </div>
+
           <div>
             <div className="wishlist-buttons-container">
               <button className="wishlist-buttons" onClick={sortByHigh}>
