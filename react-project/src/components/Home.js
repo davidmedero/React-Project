@@ -9,7 +9,7 @@ import { Content, Heading } from "./Styles";
 
 function Home(props) {
   return (
-    <div className="bodyDiv">
+    <div className="fakeStore-mainContainer">
       <div className="header-div">
         <h1 className="homeHeader">My Wishlist</h1>
         <img src={banner} />
@@ -95,7 +95,7 @@ function Home(props) {
             <div className="storeContainer">
               <Link to="/NewStore" className="newItemLink">
                 <img src={mystore} className="newstoreImg" /> <br />
-                <h3 className="newStoreHeader">New Store</h3>
+                <h3 className="newStoreHeader">Product Tool - Do Not Use</h3>
               </Link>
             </div>
 
