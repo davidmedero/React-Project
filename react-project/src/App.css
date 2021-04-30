@@ -38,7 +38,7 @@ body {
 .storeContainer {
   display: flex;
   flex-direction: column;
-  border: 3px double rgb(15, 15, 15);
+  /* border: 3px double rgb(15, 15, 15); */
   justify-content: center;
 }
 
@@ -218,14 +218,32 @@ body {
   flex-direction: column;
 }
 
+.allStoreContainer {
+  border-radius: 10px;
+  border: 3px solid black;
+  transition: 0.25s ease-in-out;
+}
+
+.allStoreContainer:hover {
+  border-color: rgb(89, 50, 143);
+  transition: 0.25s ease-in-out;
+}
+
 .bodyDiv {
   height: 100vw;
 }
 
 .wishlistContainer {
   width: 30vw;
-  border: 3px double black;
+  border: 3px solid black;
   margin-right: 10px;
+  border-radius: 10px;
+  transition: 0.25s ease-in-out;
+}
+
+.wishlistContainer:hover {
+  border-color: rgb(89, 50, 143);
+  transition: 0.25s ease-in-out;
 }
 
 .storeContainer {
