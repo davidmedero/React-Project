@@ -17,24 +17,6 @@ function Games(props) {
     });
   }, []);
 
-  let displayAllProducts = () => {
-    return products.map((product) => {
-      return (
-        <div className="gamesContainer">
-          <img src={product.thumb} className="gamesImages" /> <br></br>
-          <div className="gamesTitle">
-            <b>{product.title}</b>
-          </div>
-          <div className="gamesPrice">${product.salePrice}</div>
-          <br></br>
-          <button onClick={() => addToWishlist(product)}>
-            Add to Wishlist
-          </button>
-        </div>
-      );
-    });
-  };
-
   function addToWishlist(item) {
     let product = {
       name: item.title,
