@@ -6,6 +6,7 @@ function NewStore(props) {
   let [newProduct, setNewProduct] = useState({ product: {} });
   let [products, setProducts] = useState([]);
   let [inputText, setInputText] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState([]); // Filters products based on seach input
 
   useEffect(() => {
     axios.get(`https://ironrest.herokuapp.com/accessoriesStore`).then((res) => {
@@ -18,7 +19,6 @@ function NewStore(props) {
     newProduct.product[e.target.name] = e.target.value;
     setNewProduct(newProduct);
   }
-  console.log(products);
   function handleSubmit(e) {
     e.preventDefault();
     e.target.reset();
