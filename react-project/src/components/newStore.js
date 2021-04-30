@@ -5,15 +5,12 @@ import axios from "axios";
 function NewStore(props) {
   let [newProduct, setNewProduct] = useState({ product: {} });
   let [products, setProducts] = useState([]);
+  let [inputText, setInputText] = useState("");
 
   useEffect(() => {
-    axios
-      .get(
-        `https://ironrest.herokuapp.com/accessoriesStore`
-      )
-      .then((res) => {
-        setProducts(res.data);
-      });
+    axios.get(`https://ironrest.herokuapp.com/accessoriesStore`).then((res) => {
+      setProducts(res.data);
+    });
   }, []);
 
   function handleChange(e) {
@@ -21,12 +18,12 @@ function NewStore(props) {
     newProduct.product[e.target.name] = e.target.value;
     setNewProduct(newProduct);
   }
-
+  console.log(products);
   function handleSubmit(e) {
     e.preventDefault();
+    e.target.reset();
     axios.post("https://ironrest.herokuapp.com/accessoriesStore", newProduct);
   }
-
 
   let displayAllProducts = () => {
     return products.map((item, i) => {
@@ -37,17 +34,13 @@ function NewStore(props) {
             <b>{item.product.name}</b>
           </div>
           <div className="toyCar-price">${item.product.price}</div>
-          <button
-            className="toyCar-button"
-            onClick={() => removeProduct(item.product)}
-          >
+          <button className="toyCar-button" onClick={() => removeProduct(item)}>
             Remove
-      </button>
+          </button>
         </div>
       );
     });
   };
-
 
   //Reloads the page
   function refreshPage() {
@@ -56,12 +49,28 @@ function NewStore(props) {
     });
   }
 
-  //Removes single product from Wishlist
+  //Removes single product from Store
   let removeProduct = (item) => {
     axios
       .delete(`https://ironrest.herokuapp.com/accessoriesStore/${item._id}`)
       .then(() => refreshPage());
   };
+
+  window.onload = function () {
+    if (!window.location.hash) {
+      window.location = window.location + "#loaded";
+      window.location.reload();
+    }
+  };
+
+  function onLoad() {
+    if (window.localStorage) {
+      if (!localStorage.getItem("firstLoad")) {
+        localStorage["firstLoad"] = true;
+        window.location.reload();
+      } else localStorage.removeItem("firstLoad");
+    }
+  }
 
   //Display on screen
   return (
@@ -72,10 +81,11 @@ function NewStore(props) {
           <h2>Push Product to NEW STORE</h2>
         </div>
 
-        <form onSubmit={handleSubmit}>
+        <form name="contact-form" onSubmit={handleSubmit}>
           <div className="neItemt-nameContainer">
             <label>Product Name:</label> <br />
-            <input type="text" name="name" onChange={handleChange}></input> <br />
+            <input type="text" name="name" onChange={handleChange}></input>{" "}
+            <br />
           </div>
 
           <div className="newItem-priceContainer">
@@ -90,15 +100,18 @@ function NewStore(props) {
             <br />
           </div>
 
-          <button className="newItem-button" type="submit" value="Submit">
+          <button
+            onClick={refreshPage()}
+            className="newItem-button"
+            type="submit"
+            value="Submit"
+          >
             Add New
-        </button>
+          </button>
         </form>
       </div>
 
-      <div>
-        {displayAllProducts()}
-      </div>
+      <div>{displayAllProducts()}</div>
     </div>
   );
 }

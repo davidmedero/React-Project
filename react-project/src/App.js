@@ -10,7 +10,6 @@ import NewStore from "./components/newStore";
 import ToyCarStore from "./components/ToyCarStore";
 import ShoeStore from "./components/ShoeStore";
 
-
 function App() {
   return (
     <div className="App">

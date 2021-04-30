@@ -120,8 +120,9 @@ function Wishlist(props) {
   return (
     <div>
       <div>
-        <div className="wishlist-buttons">
+        <div className="clearAllContainer">
           <button
+            className="clearAllButton"
             onClick={() => {
               clearWishlist();
             }}
@@ -132,18 +133,29 @@ function Wishlist(props) {
           <span className="wishlistSum">{totalSum()}</span>
         </div>
 
-        <div className="wishlist-buttons">
-          <button onClick={sortByHigh}>Highest Price</button>
-          <button onClick={sortByLow}>Lowest Price</button>
-          <button onClick={sortByAtoZ}>A to Z</button>
-          <button onClick={sortByZtoA}>Z to A</button>
+        <div className="wishlist-buttons-container">
+          <button className="wishlist-buttons" onClick={sortByHigh}>
+            Highest Price
+          </button>
+          <button className="wishlist-buttons" onClick={sortByLow}>
+            Lowest Price
+          </button>
+          <button className="wishlist-buttons" onClick={sortByAtoZ}>
+            A to Z
+          </button>
+          <button className="wishlist-buttons" onClick={sortByZtoA}>
+            Z to A
+          </button>
         </div>
       </div>
-      <input
-        type="text"
-        placeholder="Search"
-        onChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="wishlistSearchbarContainer">
+        <input
+          className="wishlistSearchbar"
+          type="text"
+          placeholder="Search"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
       {filteredProducts.map((item, i) => {
         return (
           <div className="makeupItemContainer">

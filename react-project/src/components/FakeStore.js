@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
+import { Fragment } from "react";
+import ScrollButton from "./ScrollButton";
+import { Content, Heading } from "./Styles";
 
 function FakeStore(props) {
   const [products, setProducts] = useState([]); // Holds all products from API
@@ -84,6 +87,12 @@ function FakeStore(props) {
           </div>
         );
       })}
+      <div>
+        <Fragment>
+          <Content />
+          <ScrollButton />
+        </Fragment>
+      </div>
     </div>
   );
 }
