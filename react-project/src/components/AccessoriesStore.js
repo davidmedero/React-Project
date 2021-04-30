@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import { Content, Heading } from "./Styles";
-import { Fragment } from "react";
-import ScrollButton from "./ScrollButton";
 
 function AccessoriesStore(props) {
     const [products, setProducts] = useState([]); //Holds all products from API
@@ -126,16 +123,6 @@ function AccessoriesStore(props) {
                             onChange={(e) => setSearch(e.target.value)}
                         />
                     </div>
-                </div>
-            </div>
-
-            <div className="fakeStore-button-div">
-                <div>
-                    <h3>Sort By:</h3>
-                </div>
-                <div>
-                    <button onClick={() => sortByHigh()}>Highest Price</button>
-                    <button onClick={() => sortByLow()}>Lowest Price</button>
                 </div>
             </div>
 
