@@ -55,7 +55,7 @@ function Home(props) {
             </div>
           </div>
 
-          <div>
+          <div className="storesRow">
             <div className="storeContainer">
               <Link to="/NewStore" className="newItemLink">
                 <img src="https://logos-world.net/wp-content/uploads/2020/10/Steam-Logo.png" />{" "}
@@ -69,6 +69,16 @@ function Home(props) {
                 <img src="https://ae01.alicdn.com/kf/HTB1CoJNKr1YBuNjSszhq6AUsFXaC/1-24-LX570-Alloy-Metal-Model-Pull-Back-Toy-Cars-Light-Sound-Diecast-Vehicle-Toys-Car.jpg_q50.jpg" />{" "}
                 <br />
                 <h3>Toy Car</h3>
+              </Link>
+            </div>
+          </div>
+
+          <div className="storesRow">
+            <div className="storeContainer">
+              <Link to="/ShoeStore" className="newItemLink">
+                <img src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F04%2Ftyler-the-creator-converse-artist-series-Spencer-McMullen-8.jpg?w=1600&cbr=1&q=90&fit=max" />{" "}
+                <br />
+                <h3>Shoe Store</h3>
               </Link>
             </div>
           </div>

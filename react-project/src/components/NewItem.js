@@ -22,6 +22,7 @@ function NewItem(props) {
   //Stores new item in Wishlist API
   function handleSubmit(e) {
     e.preventDefault();
+    e.target.reset();
     axios.post("https://ironrest.herokuapp.com/wishlist", newItem);
   }
 
@@ -42,6 +43,12 @@ function NewItem(props) {
         <div className="newItem-priceContainer">
           <label>Price:</label> <br />
           <input type="text" name="price" onChange={handleChange} />
+          <br />
+        </div>
+
+        <div className="newItem-priceContainer">
+          <label>Image URL:</label> <br />
+          <input type="text" name="image" onChange={handleChange} />
           <br />
         </div>
 
