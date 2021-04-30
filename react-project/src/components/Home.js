@@ -9,7 +9,7 @@ import { Content, Heading } from "./Styles";
 
 function Home(props) {
   return (
-    <div className="bodyDiv">
+    <div className="fakeStore-mainContainer">
       <div className="header-div">
         <h1 className="homeHeader">My Wishlist</h1>
         <img src={banner} />
@@ -46,7 +46,7 @@ function Home(props) {
 
             <div className="storeContainer">
               <Link to="/AccessoriesStore" className="newItemLink">
-                <img src="https://www.anglodiamond.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/G/a/Gabriel-14k-Yellow-Gold-Diamond-Wide-Band-Ladies-Ring-LR51159Y45JJ-3.jpg" />{" "}
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdPtQtu1V8O3ZUAowwKZEgN5w1cG9L9Iqobw&usqp=CAU" />{" "}
                 <br />
                 <h3>Accessories Store</h3>
               </Link>
@@ -95,7 +95,7 @@ function Home(props) {
             <div className="storeContainer">
               <Link to="/NewStore" className="newItemLink">
                 <img src={mystore} className="newstoreImg" /> <br />
-                <h3 className="newStoreHeader">New Store</h3>
+                <h3 className="newStoreHeader">Product Tool - Do Not Use</h3>
               </Link>
             </div>
 

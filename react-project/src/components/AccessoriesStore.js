@@ -75,6 +75,10 @@ function AccessoriesStore(props) {
                 <Navbar />
                 <h2>Accessories</h2>
             </div>
+            <div className="header-div">
+            <img src="https://shoppickups.com/wp-content/uploads/2020/05/Womens-Accessories-2.jpg"/>
+
+            </div>
 
             <div className="fakeStore-button-div">
                 <div>
