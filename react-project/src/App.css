@@ -93,6 +93,8 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
+  border-radius: 10px;
+  padding: 4px 6px;
 }
 
 .fakestoreItemContainer {
@@ -339,7 +341,10 @@ body {
 }
 
 .seachBar {
-  width: 200px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 3px solid blue;
+  width: 250px;
 }
 
 .seachBar-div {
@@ -358,10 +363,14 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px 0;
+  
 }
 
 .wishlistSearchbar {
   margin-bottom: 10px;
+  border-radius: 8px;
+  border: 3px solid rgb(218, 42, 42);
+  width: 250px;
 }
 
 .gamesContainer {
