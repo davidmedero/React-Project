@@ -19,27 +19,6 @@ function ToyCarStore(props) {
             });
     }, []);
 
-    //Displays all products when function is called
-    let displayAllProducts = () => {
-        return products.map((item, i) => {
-            return (
-                <div className="toyCar-container">
-                    <img src={item.product.image} className="toyCar-img" />
-                    <div className="toyCar-name">
-                        <b>{item.product.name}</b>
-                    </div>
-                    <div className="toyCar-price">${item.product.price}</div>
-                    <button
-                        className="toyCar-button"
-                        onClick={() => addToWishlist(item.product)}
-                    >
-                        Add to Wishlist
-          </button>
-                </div>
-            );
-        });
-    };
-
     // Post product to Wishlist API
     function addToWishlist(item) {
         let product = {
@@ -118,7 +97,7 @@ function ToyCarStore(props) {
                 <h2>Toy Cars</h2>
             </div>
             <div className="header-div">
-                <img src={toyCarImg} className="bannerImage"/>
+                <img src={toyCarImg} className="bannerImage" />
             </div>
 
             <div className="fakeStore-button-div">

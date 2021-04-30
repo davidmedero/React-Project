@@ -19,26 +19,7 @@ function ShoeStore(props) {
             });
     }, []);
 
-    //Displays all products when function is called
-    let displayAllProducts = () => {
-        return products.map((item, i) => {
-            return (
-                <div className="toyCar-container">
-                    <img src={item.product.image} className="toyCar-img" />
-                    <div className="toyCar-name">
-                        <b>{item.product.name}</b>
-                    </div>
-                    <div className="toyCar-price">${item.product.price}</div>
-                    <button
-                        className="toyCar-button"
-                        onClick={() => addToWishlist(item.product)}
-                    >
-                        Add to Wishlist
-          </button>
-                </div>
-            );
-        });
-    };
+
 
     // Post product to Wishlist API
     function addToWishlist(item) {
@@ -119,7 +100,7 @@ function ShoeStore(props) {
                 <h2>Shoe Store</h2>
             </div>
             <div className="header-div">
-                <img src={shoeImg} className="bannerImage"/>
+                <img src={shoeImg} className="bannerImage" />
             </div>
 
             <div className="fakeStore-button-div">
