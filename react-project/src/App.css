@@ -10,6 +10,12 @@
   font-size: 50px;
 }
 
+body {
+  font-family: freude, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .homeContainer {
   display: flex;
   /* justify-content: space-around; */
@@ -25,11 +31,19 @@
   margin-left: 20px;
 }
 
+.toyCarLink {
+  margin-top: -20px;
+}
+
 .storeContainer {
   display: flex;
   flex-direction: column;
   border: 3px double black;
   justify-content: center;
+}
+
+.newstoreImg {
+  margin-top: -40px;
 }
 
 .makeupLink {
@@ -49,7 +63,7 @@
 }
 
 .makeupItemContainer {
-  padding: 10px;
+  padding: 30px;
   margin-bottom: 70px 0;
   display: flex;
   align-items: center;
@@ -59,8 +73,30 @@
 .makeupRemoveButton {
   width: 150px;
   border-radius: 50px;
-  background-color: darkred;
+  border: 3px solid rgb(225, 148, 148);
+  background-color: rgb(218, 94, 94);
   color: white;
+  margin-bottom: 50px;
+  transition: all 0.3s ease-in-out;
+  padding: 7px 0;
+  font-family: freude, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.makeupRemoveButton:hover {
+  background-color: rgb(160, 0, 0);
+  transition: all 0.3s ease;
+  border: 3px solid rgb(218, 42, 42);
+  transition: border 0.3s ease-out;
+}
+
+.clearAllButton {
+  font-family: freude, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .fakestoreItemContainer {
@@ -82,6 +118,7 @@
 
 .makeupName {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .makeupPrice {
@@ -157,6 +194,15 @@
 
 .newItemLink {
   margin-top: 50px;
+  text-decoration: none;
+  /* transform: scale(1.2); */
+  transition: all 0.3s ease-in-out;
+}
+
+.newItemLink:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
 
 .steamImage {
@@ -255,8 +301,35 @@
 }
 
 .wishlist-buttons {
+  padding: 5px 6px;
+  margin-top: 5px;
+  font-family: freude, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+
+.wishlist-buttons-container {
   display: flex;
   justify-content: space-around;
+  padding: 10px 8px;
+  margin-top: 5px;
+}
+
+.clearAllContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 8px;
+  margin-top: 5px;
+}
+
+.wishlistSearchbarContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.wishlistSearchbar {
   margin-bottom: 10px;
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 import banner from "./banner.png";
+import mystore from "./mystore.png";
 
 function Home(props) {
   return (
@@ -19,7 +20,7 @@ function Home(props) {
         <div className="allStoreContainer">
           <div className="storesRow">
             <div className="storeContainer">
-              <Link to="/FakeStore" className="fakestoreLinkHome">
+              <Link to="/FakeStore" className="newItemLink">
                 <img src="https://dynamic.brandcrowd.com/asset/logo/a7113a63-6440-47bd-8e20-ce74be61571c/logo?v=4" />{" "}
                 <br />
                 <h3>Fake Store</h3>
@@ -27,7 +28,7 @@ function Home(props) {
             </div>
 
             <div className="storeContainer">
-              <Link to="/Makeup" className="makeupLinkHome">
+              <Link to="/Makeup" className="newItemLink">
                 <img src="https://logodix.com/logo/694639.png" /> <br />
                 <h3 className="makeupLink">Makeup</h3>
               </Link>
@@ -58,17 +59,19 @@ function Home(props) {
           <div className="storesRow">
             <div className="storeContainer">
               <Link to="/NewStore" className="newItemLink">
-                <img src="https://logos-world.net/wp-content/uploads/2020/10/Steam-Logo.png" />{" "}
-                <br />
-                <h3>New Store</h3>
+                <img src={mystore} className="newstoreImg" /> <br />
+                <h3 className="newStoreHeader">New Store</h3>
               </Link>
             </div>
 
             <div className="storeContainer">
               <Link to="/ToyCarStore" className="newItemLink">
-                <img src="https://ae01.alicdn.com/kf/HTB1CoJNKr1YBuNjSszhq6AUsFXaC/1-24-LX570-Alloy-Metal-Model-Pull-Back-Toy-Cars-Light-Sound-Diecast-Vehicle-Toys-Car.jpg_q50.jpg" />{" "}
+                <img
+                  src="https://ae01.alicdn.com/kf/HTB1CoJNKr1YBuNjSszhq6AUsFXaC/1-24-LX570-Alloy-Metal-Model-Pull-Back-Toy-Cars-Light-Sound-Diecast-Vehicle-Toys-Car.jpg_q50.jpg"
+                  className="toyCarImg"
+                />{" "}
                 <br />
-                <h3>Toy Car</h3>
+                <h3 className="toyCarHeader">Toy Car</h3>
               </Link>
             </div>
           </div>
