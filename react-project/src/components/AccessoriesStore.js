@@ -8,6 +8,7 @@ import ScrollButton from "./ScrollButton";
 function AccessoriesStore(props) {
     const [products, setProducts] = useState([]); //Holds all products from API
     const [search, setSearch] = useState(""); // Search Bar state
+    const [filteredProducts, setFilteredProducts] = useState([]); // Filters products based on seach input
 
     // Imports API from online
     useEffect(() => {
@@ -102,6 +103,16 @@ function AccessoriesStore(props) {
         );
     }
 
+    //Sort products by Search Input
+    useEffect(() => {
+        setFilteredProducts(
+            products.filter((item) => {
+                return item.product.name.toLowerCase().includes(search.toLowerCase());
+            })
+        );
+    }, [search, products]);
+
+
     //Display on screen
     return (
         <div className="fakeStore-mainContainer">
@@ -158,7 +169,23 @@ function AccessoriesStore(props) {
                     <button onClick={() => sortByLow()}>Lowest Price</button>
                 </div>
             </div>
-            <div>{displayAllProducts()}</div>
+
+            {filteredProducts.map((item, i) => {
+                return (
+                    <div className="makeupItemContainer">
+                        <img src={item.product.image} className="makeupImages" />
+                        <div className="makeupName">{item.product.name}</div>
+                        <div className="makeupPrice">${item.product.price}</div>
+                        <button
+                            className="toyCar-button"
+                            onClick={() => addToWishlist(item.product)}
+                        >
+                            Add to Wishlist
+          </button>
+                    </div>
+                );
+            })}
+
         </div>
     );
 }

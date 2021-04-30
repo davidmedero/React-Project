@@ -8,6 +8,7 @@ import { Content, Heading } from "./Styles";
 function Games(props) {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState(""); // Search Bar state
+  const [filteredProducts, setFilteredProducts] = useState([]); // Filters products based on seach input
 
   useEffect(() => {
     axios.get("https://www.cheapshark.com/api/1.0/deals").then((res) => {
@@ -90,6 +91,16 @@ function Games(props) {
     );
   }
 
+  //Sort products by Search Input
+  useEffect(() => {
+    setFilteredProducts(
+      products.filter((item) => {
+        return item.title.toLowerCase().includes(search.toLowerCase());
+      })
+    );
+  }, [search, products]);
+
+
   return (
     <div className="fakeStore-mainContainer">
 
@@ -136,7 +147,22 @@ function Games(props) {
 
       </div>
 
-      <div>{displayAllProducts()}</div>
+      {filteredProducts.map((item, i) => {
+        return (
+          <div className="makeupItemContainer">
+            <img src={item.thumb} className="makeupImages" />
+            <div className="makeupName">{item.title}</div>
+            <div className="makeupPrice">${item.salePrice}</div>
+            <button
+              className="toyCar-button"
+              onClick={() => addToWishlist(item)}
+            >
+              Add to Wishlist
+          </button>
+          </div>
+        );
+      })}
+
       <div>
         <Fragment>
           <Content />
