@@ -88,8 +88,8 @@ function ToyCarStore(props) {
   //Display on screen
   return (
     <div className="fakeStore-mainContainer">
+      <Navbar />
       <div>
-        <Navbar />
         <h2>Toy Cars</h2>
       </div>
       <div className="header-div">
@@ -97,7 +97,6 @@ function ToyCarStore(props) {
       </div>
 
       <div className="fakeStore-button-div">
-
         <div className="sortBy">
           <div>
             <h3>Sort By:</h3>
