@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
+import shoeImg from "./shoes.jpeg";
 
 function ShoeStore(props) {
     const [products, setProducts] = useState([]); //Holds all products from API
@@ -118,7 +119,7 @@ function ShoeStore(props) {
                 <h2>Shoe Store</h2>
             </div>
             <div className="header-div">
-                <img src="https://identity-mag.com/wp-content/uploads/2017/10/category_makeup_840x400-9wmww.jpg" />
+                <img src={shoeImg} className="bannerImage"/>
             </div>
 
             <div className="fakeStore-button-div">
