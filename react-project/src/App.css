@@ -130,6 +130,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .fakestoreJsImages {
@@ -151,7 +152,7 @@ body {
 }
 
 .fakestoreJsAddButton {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 
 .makeupJsProductContainer {
@@ -160,11 +161,10 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: white;
+  width: 500px;
 }
 .makeupJsdescription {
-  width: 500px;
-  padding-left: 40px;
-  padding-right: 40px;
+  width: 400px;
 }
 
 .makeupJsImages {
@@ -189,7 +189,7 @@ body {
 }
 
 .makeupJsAddButton {
-  margin-bottom: 85px;
+  margin-bottom: 40px;
 }
 
 .newItemLink {
