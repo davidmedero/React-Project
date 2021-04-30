@@ -113,7 +113,7 @@ function Makeup(props) {
             <div className="wishlist-buttons-container">
               <button className="wishlist-buttons" onClick={sortByHigh}>
                 Highest Price
-             </button>
+              </button>
               <button className="wishlist-buttons" onClick={sortByLow}>
                 Lowest Price
               </button>
