@@ -44,7 +44,7 @@ function NewStore(props) {
 
   //Reloads the page
   function refreshPage() {
-    axios.get(`https://ironrest.herokuapp.com/accessoriesStore`).then((res) => {
+    axios.get(`https://ironrest.herokuapp.com/ShoeStore`).then((res) => {
       setProducts(res.data);
     });
   }

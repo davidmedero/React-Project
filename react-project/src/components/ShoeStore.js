@@ -73,7 +73,7 @@ function ShoeStore(props) {
         <div className="fakeStore-mainContainer">
             <div className="navbar">
                 <Navbar />
-                <h2>Makeup Products</h2>
+                <h2>Shoe Store</h2>
             </div>
 
             <div className="fakeStore-button-div">
