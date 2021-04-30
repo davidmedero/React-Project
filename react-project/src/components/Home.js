@@ -46,7 +46,10 @@ function Home(props) {
 
             <div className="storeContainer">
               <Link to="/AccessoriesStore" className="newItemLink">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdPtQtu1V8O3ZUAowwKZEgN5w1cG9L9Iqobw&usqp=CAU" />{" "}
+
+                <img 
+                className="accessoriesLogo"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd198o5Z1CCwmG_sKKlmfi4TkxvoyDxYplAQ&usqp=CAU" />{" "}
                 <br />
                 <h3>Accessories Store</h3>
               </Link>

@@ -11,6 +11,8 @@ function NewItem(props) {
         "https://cdn.pixabay.com/photo/2017/10/18/14/31/box-2864335_960_720.png",
     },
   });
+  const [filteredProducts, setFilteredProducts] = useState([]); // Filters products based on seach input
+
 
   //Takes user input and stores data in object called newItem
   function handleChange(e) {

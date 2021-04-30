@@ -34,10 +34,10 @@ function FakeStore(props) {
   function sortByAtoZ() {
     setProducts(
       [...products].sort((a, b) => {
-        if (a.product.name < b.product.name) {
+        if (a.title < b.title) {
           return -1;
         }
-        if (a.product.name > b.product.name) {
+        if (a.title > b.title) {
           return 1;
         }
         return 0;
@@ -49,10 +49,10 @@ function FakeStore(props) {
   function sortByZtoA() {
     setProducts(
       [...products].sort((a, b) => {
-        if (a.product.name > b.product.name) {
+        if (a.title > b.title) {
           return -1;
         }
-        if (a.product.name < b.product.name) {
+        if (a.title < b.title) {
           return 1;
         }
         return 0;
@@ -96,7 +96,7 @@ function FakeStore(props) {
         <h2>Fake Store</h2>
       </div>
       <div className="header-div">
-        <img src="https://media.istockphoto.com/photos/organic-cosmetics-for-makeup-banner-on-light-pink-background-picture-id1178523655" />
+        <img src="https://www.makdigitaldesign.com/wp-content/uploads/2020/04/ecommerceads.jpg" />
       </div>
 
       <div className="fakeStore-button-div">
