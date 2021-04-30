@@ -3,6 +3,13 @@
   justify-content: space-around;
 }
 
+.homeHeader {
+  font-family: bello-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+
 .homeContainer {
   display: flex;
   /* justify-content: space-around; */
@@ -22,10 +29,19 @@
   display: flex;
   flex-direction: column;
   border: 3px double black;
+  justify-content: center;
+}
+
+.makeupLink {
+  margin-bottom: 40px;
+}
+
+.addYourOwnLink {
+  margin-bottom: 70px;
 }
 
 .makeupLinkHome {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .fakestoreImages {
@@ -143,6 +159,14 @@
   margin-top: 50px;
 }
 
+.steamImage {
+  margin-bottom: 30px;
+}
+
+.steamGamesLink {
+  margin-bottom: 40px;
+}
+
 .allStoreContainer img {
   width: 700px;
   flex-direction: column;
@@ -180,11 +204,9 @@
   flex-direction: column;
 }
 
-
 .newItem-nameContainer {
   margin-top: 20px;
 }
-
 
 .newItem-priceContainer {
   margin-top: 20px;
