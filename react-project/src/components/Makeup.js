@@ -102,27 +102,25 @@ function Makeup(props) {
         <img src="https://identity-mag.com/wp-content/uploads/2017/10/category_makeup_840x400-9wmww.jpg" />
       </div>
 
-
       <div className="sortBy">
         <div>
           <h3>Sort By:</h3>
         </div>
 
         <div style={{ width: "100%" }}>
-
           <div className="wishlist-buttons-container">
             <button className="wishlist-buttons" onClick={sortByHigh}>
               Highest Price
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByLow}>
               Lowest Price
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByAtoZ}>
               A to Z
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByZtoA}>
               Z to A
-              </button>
+            </button>
           </div>
 
           <div className="seachBar-div">
@@ -133,9 +131,7 @@ function Makeup(props) {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-
         </div>
-
       </div>
 
       {filteredProducts.map((product, i) => {
@@ -149,11 +145,11 @@ function Makeup(props) {
             <div className="makeupJsprice">${product.price}</div>
             <div className="makeupJsdescription">{product.description}</div>
             <button
-              className="makeupJsAddButton"
+              className="addToWishlistButton"
               onClick={() => addToWishlist(product)}
             >
               Add to Wishlist
-              </button>
+            </button>
           </div>
         );
       })}

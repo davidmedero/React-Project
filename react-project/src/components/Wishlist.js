@@ -169,6 +169,7 @@ function Wishlist(props) {
             >
               Remove Item
             </button>
+            <span class="ion-help-circled"></span>
           </div>
         );
       })}

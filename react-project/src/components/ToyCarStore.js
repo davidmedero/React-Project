@@ -137,7 +137,7 @@ function ToyCarStore(props) {
             <div className="makeupName">{item.product.name}</div>
             <div className="makeupPrice">${item.product.price}</div>
             <button
-              className="toyCar-button"
+              className="addToWishlistButton"
               onClick={() => addToWishlist(item.product)}
             >
               Add to Wishlist

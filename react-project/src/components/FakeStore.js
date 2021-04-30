@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
@@ -140,7 +139,7 @@ function FakeStore(props) {
             <div className="fakestoreJsPrice">${product.price}</div>
             <div className="fakestoreJsDescription">{product.description}</div>
             <button
-              className="fakestoreJsAddButton"
+              className="addToWishlistButton"
               onClick={() => addToWishlist(product)}
             >
               Add to Wishlist
