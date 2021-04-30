@@ -435,3 +435,8 @@ body {
 .bannerImage {
   width: 60vw
 }
+
+.newItem-mainContainer h2 {
+  display: flex;
+  justify-content: center;
+}
