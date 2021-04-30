@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import { Fragment } from "react";
 import ScrollButton from "./ScrollButton";
 import { Content, Heading } from "./Styles";
+import videoGameImg from "./video-games.jpeg";
 
 function Games(props) {
   const [products, setProducts] = useState([]);
@@ -109,7 +110,7 @@ function Games(props) {
         <h2>Games</h2>
       </div>
       <div className="game-header-div">
-        <img src="http://www.volt.com/uploadedImages/Blog/how_to_get_a_job_as_a_video_game_tester_banner.jpg" />
+        <img src={videoGameImg} />
       </div>
 
 

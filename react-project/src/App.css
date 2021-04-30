@@ -18,8 +18,7 @@ body {
 
 .homeContainer {
   display: flex;
-  /* justify-content: space-around; */
-  margin-top: 100px;
+  margin-top: 50px;
   justify-content: center;
 }
 
@@ -39,19 +38,12 @@ body {
   display: flex;
   flex-direction: column;
   /* border: 3px double rgb(15, 15, 15); */
-  justify-content: center;
+  justify-content: flex-end;
 }
+
 
 .newstoreImg {
   margin-top: -40px;
-}
-
-.makeupLink {
-  margin-bottom: 40px;
-}
-
-.addYourOwnLink {
-  margin-bottom: 70px;
 }
 
 .makeupLinkHome {
@@ -211,10 +203,6 @@ body {
 
 .steamImage {
   margin-bottom: 30px;
-}
-
-.steamGamesLink {
-  margin-bottom: 40px;
 }
 
 .allStoreContainer img {
@@ -390,10 +378,6 @@ body {
   height: 400px;
 }
 
-.toyCar-img {
-  width: 300px;
-}
-
 .toyCar-container {
   display: flex;
   justify-content: center;
@@ -432,11 +416,13 @@ body {
   height: 40vh;
 }
 
-.accessoriesLogo {
-
-  margin-bottom: 30px;
-  border-radius: 90%;
 
 
 
+.bannerImage {
+  width: 60vw
+}
+
+.homePage-storeLogo {
+  width: 300px;
 }
