@@ -318,8 +318,18 @@ body {
 .wishlist-buttons-container {
   display: flex;
   justify-content: space-around;
+  width: 400px;
   padding: 10px 8px;
   margin-top: 5px;
+}
+
+.seachBar {
+  width: 200px;
+}
+
+.seachBar-div {
+  display: flex;
+  justify-content: center;
 }
 
 .clearAllContainer {
@@ -378,4 +388,15 @@ body {
 
 .toyCar-button {
   margin-bottom: 80px;
+}
+
+.sortBy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.sortBy h3 {
+  margin-bottom: 0;
 }
