@@ -134,16 +134,16 @@ function Wishlist(props) {
         </div>
 
         <div className="wishlist-buttons-container">
-          <button className="wishlist-buttons" onClick={sortByHigh}>
+          <button className="wishlist-buttons-home" onClick={sortByHigh}>
             Highest Price
           </button>
-          <button className="wishlist-buttons" onClick={sortByLow}>
+          <button className="wishlist-buttons-home" onClick={sortByLow}>
             Lowest Price
           </button>
-          <button className="wishlist-buttons" onClick={sortByAtoZ}>
+          <button className="wishlist-buttons-home" onClick={sortByAtoZ}>
             A to Z
           </button>
-          <button className="wishlist-buttons" onClick={sortByZtoA}>
+          <button className="wishlist-buttons-home" onClick={sortByZtoA}>
             Z to A
           </button>
         </div>

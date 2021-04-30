@@ -120,6 +120,7 @@ body {
   font-size: 14px;
   border-radius: 10px;
   padding: 4px 6px;
+  border:rgb(218, 42, 42) 2px solid;
 }
 
 .fakestoreItemContainer {
@@ -359,6 +360,7 @@ body {
   font-size: 14px;
   margin: 0 3px;
   border-radius: 10px;
+  border:rgb(49, 155, 28) 2px solid;
 }
 
 .wishlist-buttons-container {
@@ -372,7 +374,7 @@ body {
 .seachBar {
   margin-bottom: 10px;
   border-radius: 8px;
-  border: 3px solid blue;
+  border: 3px solid rgb(49, 155, 28);
   width: 250px;
 }
 
@@ -470,4 +472,16 @@ body {
 
 .homePage-storeLogo {
   width: 300px;
+}
+
+.wishlist-buttons-home {
+  padding: 5px 6px;
+  margin-top: 5px;
+  font-family: freude, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  margin: 0 3px;
+  border-radius: 10px;
+  border:rgb(218, 42, 42) 2px solid;
 }
