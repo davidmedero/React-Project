@@ -29,6 +29,36 @@ function FakeStore(props) {
     });
   }
 
+  //Sort product list by A to Z
+  function sortByAtoZ() {
+    setProducts(
+      [...products].sort((a, b) => {
+        if (a.product.name < b.product.name) {
+          return -1;
+        }
+        if (a.product.name > b.product.name) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+  }
+
+  //Sort product list by Z to A
+  function sortByZtoA() {
+    setProducts(
+      [...products].sort((a, b) => {
+        if (a.product.name > b.product.name) {
+          return -1;
+        }
+        if (a.product.name < b.product.name) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+  }
+
   //Sort products by Highest price
   function sortByHigh() {
     setProducts(
@@ -58,16 +88,52 @@ function FakeStore(props) {
 
   //Display on screen
   return (
-    <div>
-      <Navbar />
-      Sort By:
-      <button onClick={() => sortByHigh()}>Highest Price</button>
-      <button onClick={() => sortByLow()}>Lowest Price</button>
-      <input
-        type="text"
-        placeholder="Search"
-        onChange={(e) => setSearch(e.target.value)}
-      />
+    <div className="fakeStore-mainContainer">
+
+      <div>
+        <Navbar />
+        <h2>Fake Store</h2>
+      </div>
+      <div className="header-div">
+        <img src="https://media.istockphoto.com/photos/organic-cosmetics-for-makeup-banner-on-light-pink-background-picture-id1178523655" />
+      </div>
+
+      <div className="fakeStore-button-div">
+
+        <div className="sortBy">
+          <div>
+            <h3>Sort By:</h3>
+          </div>
+          <div>
+
+            <div className="wishlist-buttons-container">
+              <button className="wishlist-buttons" onClick={sortByHigh}>
+                Highest Price
+             </button>
+              <button className="wishlist-buttons" onClick={sortByLow}>
+                Lowest Price
+              </button>
+              <button className="wishlist-buttons" onClick={sortByAtoZ}>
+                A to Z
+              </button>
+              <button className="wishlist-buttons" onClick={sortByZtoA}>
+                Z to A
+              </button>
+            </div>
+
+            <div className="seachBar-div">
+              <input
+                className="seachBar"
+                type="text"
+                placeholder="Search"
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+          </div>
+
+        </div>
+
+      </div>
       {filteredProducts.map((product, i) => {
         return (
           <div className="fakestoreJsProductContainer">
@@ -86,6 +152,10 @@ function FakeStore(props) {
           </div>
         );
       })}
+
+
+
+
       <div>
         <Fragment>
           <Content />

@@ -44,7 +44,7 @@ function NewStore(props) {
 
   //Reloads the page
   function refreshPage() {
-    axios.get(`https://ironrest.herokuapp.com/accessoriesStore`).then((res) => {
+    axios.get(`https://ironrest.herokuapp.com/ShoeStore`).then((res) => {
       setProducts(res.data);
     });
   }
@@ -74,7 +74,7 @@ function NewStore(props) {
 
   //Display on screen
   return (
-    <div>
+    <div className="fakeStore-mainContainer">
       <div className="newProduct-mainContainer">
         <div className="navbar">
           <Navbar />

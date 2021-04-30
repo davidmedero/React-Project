@@ -163,9 +163,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: white;
 }
 .makeupJsdescription {
   width: 500px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .makeupJsImages {
@@ -186,6 +189,7 @@ body {
 
 .makeupJsdescription {
   margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .makeupJsAddButton {
@@ -266,6 +270,7 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-image: url("https://media.istockphoto.com/vectors/abstract-white-smooth-lines-wave-background-vector-subtle-design-vector-id1176352359?b=1&k=6&m=1176352359&s=612x612&w=0&h=srXvxC9xUcLDR_Ntv4qvFcF8BmD1O_wDKGq1leA_9zw=");
 }
 
 .newItem-nameContainer {
@@ -306,6 +311,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("https://media.istockphoto.com/vectors/abstract-white-smooth-lines-wave-background-vector-subtle-design-vector-id1176352359?b=1&k=6&m=1176352359&s=612x612&w=0&h=srXvxC9xUcLDR_Ntv4qvFcF8BmD1O_wDKGq1leA_9zw=");
 }
 
 .fakeStore-button-div {
@@ -330,8 +336,18 @@ body {
 .wishlist-buttons-container {
   display: flex;
   justify-content: space-around;
+  width: 400px;
   padding: 10px 8px;
   margin-top: 5px;
+}
+
+.seachBar {
+  width: 200px;
+}
+
+.seachBar-div {
+  display: flex;
+  justify-content: center;
 }
 
 .clearAllContainer {
@@ -391,3 +407,21 @@ body {
 .toyCar-button {
   margin-bottom: 80px;
 }
+
+<<<<<<< HEAD
+.sortBy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.sortBy h3 {
+  margin-bottom: 0;
+}
+=======
+.fakeStore-mainContainer h2 {
+  font-size: 30px;
+}
+
+>>>>>>> 5d923cdac4ad9188a870444f6c9630ee74f276f3
