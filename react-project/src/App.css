@@ -417,7 +417,12 @@ body {
 
 
 .bannerImage {
-  width: 60vw;
+  width: 60vw
+}
+
+.newItem-mainContainer h2 {
+  display: flex;
+  justify-content: center;
 }
 
 .homePage-storeLogo {

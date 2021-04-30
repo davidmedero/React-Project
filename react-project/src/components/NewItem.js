@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import axios from "axios";
+import newItemImage from "./new-item.jpeg";
 
 function NewItem(props) {
   // Declare object "newItem" with an object "product" inside.
@@ -31,9 +32,12 @@ function NewItem(props) {
   //Display on screen
   return (
     <div className="newItem-mainContainer">
-      <div className="navbar">
+      <div>
         <Navbar />
         <h2>Enter information about your product below!</h2>
+        <div className="header-div">
+                <img src={newItemImage} className="bannerImage"/>
+            </div>
       </div>
 
       <form onSubmit={handleSubmit}>

@@ -92,10 +92,10 @@ function AccessoriesStore(props) {
     <div className="fakeStore-mainContainer">
       <Navbar />
       <div>
-        <h2>Accessoriess</h2>
+        <h2>Accessories</h2>
       </div>
-      <div className="header-div">
-        <img src="https://identity-mag.com/wp-content/uploads/2017/10/category_makeup_840x400-9wmww.jpg" />
+      <div className="header-div1">
+        <img src="https://shoppickups.com/wp-content/uploads/2020/05/Womens-Accessories-2.jpg" />
       </div>
 
       <div className="sortBy">
