@@ -99,6 +99,10 @@ body {
   margin: 70px 0;
 }
 
+.addToStoreDiv img {
+  width: 400px;
+}
+
 .makeupImages {
   margin-bottom: 30px;
   width: 200px;
@@ -280,12 +284,11 @@ body {
 .navbar {
   height: 100px;
   width: 300px;
-  background-color: darkolivegreen;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  padding-bottom: 60px;
 }
 
 .navbar h2 {

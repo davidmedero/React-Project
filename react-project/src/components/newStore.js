@@ -109,9 +109,10 @@ function NewStore(props) {
             Add New
           </button>
         </form>
+        <br /><br />
       </div>
 
-      <div>{displayAllProducts()}</div>
+      <div className="addToStoreDiv">{displayAllProducts()}</div>
     </div>
   );
 }
