@@ -100,39 +100,34 @@ function Games(props) {
     );
   }, [search, products]);
 
-
   return (
     <div className="fakeStore-mainContainer">
-
+      <Navbar />
       <div>
-        <Navbar />
         <h2>Games</h2>
       </div>
       <div className="header-div">
         <img src="http://www.volt.com/uploadedImages/Blog/how_to_get_a_job_as_a_video_game_tester_banner.jpg" />
       </div>
 
-
-
       <div className="sortBy">
         <div>
           <h3>Sort By:</h3>
         </div>
         <div>
-
           <div className="wishlist-buttons-container">
             <button className="wishlist-buttons" onClick={sortByHigh}>
               Highest Price
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByLow}>
               Lowest Price
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByAtoZ}>
               A to Z
-              </button>
+            </button>
             <button className="wishlist-buttons" onClick={sortByZtoA}>
               Z to A
-              </button>
+            </button>
           </div>
 
           <div className="seachBar-div">
@@ -144,7 +139,6 @@ function Games(props) {
             />
           </div>
         </div>
-
       </div>
 
       {filteredProducts.map((item, i) => {
@@ -158,7 +152,7 @@ function Games(props) {
               onClick={() => addToWishlist(item)}
             >
               Add to Wishlist
-          </button>
+            </button>
           </div>
         );
       })}
