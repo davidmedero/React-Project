@@ -33,10 +33,10 @@ function FakeStore(props) {
   function sortByAtoZ() {
     setProducts(
       [...products].sort((a, b) => {
-        if (a.product.name < b.product.name) {
+        if (a.title < b.title) {
           return -1;
         }
-        if (a.product.name > b.product.name) {
+        if (a.title > b.title) {
           return 1;
         }
         return 0;
@@ -48,10 +48,10 @@ function FakeStore(props) {
   function sortByZtoA() {
     setProducts(
       [...products].sort((a, b) => {
-        if (a.product.name > b.product.name) {
+        if (a.title > b.title) {
           return -1;
         }
-        if (a.product.name < b.product.name) {
+        if (a.title < b.title) {
           return 1;
         }
         return 0;

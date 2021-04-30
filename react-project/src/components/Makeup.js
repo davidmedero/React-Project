@@ -38,10 +38,10 @@ function Makeup(props) {
   function sortByAtoZ() {
     setProducts(
       [...products].sort((a, b) => {
-        if (a.product.name < b.product.name) {
+        if (a.name < b.name) {
           return -1;
         }
-        if (a.product.name > b.product.name) {
+        if (a.name > b.name) {
           return 1;
         }
         return 0;
@@ -53,10 +53,10 @@ function Makeup(props) {
   function sortByZtoA() {
     setProducts(
       [...products].sort((a, b) => {
-        if (a.product.name > b.product.name) {
+        if (a.name > b.name) {
           return -1;
         }
-        if (a.product.name < b.product.name) {
+        if (a.name < b.name) {
           return 1;
         }
         return 0;

@@ -7,6 +7,7 @@ import { Content, Heading } from "./Styles";
 
 function Games(props) {
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState(""); // Search Bar state
 
   useEffect(() => {
     axios.get("https://www.cheapshark.com/api/1.0/deals").then((res) => {
@@ -43,6 +44,36 @@ function Games(props) {
     });
   }
 
+  //Sort product list by A to Z
+  function sortByAtoZ() {
+    setProducts(
+      [...products].sort((a, b) => {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+  }
+
+  //Sort product list by Z to A
+  function sortByZtoA() {
+    setProducts(
+      [...products].sort((a, b) => {
+        if (a.title > b.title) {
+          return -1;
+        }
+        if (a.title < b.title) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+  }
+
   function sortByHigh() {
     setProducts(
       [...products].sort((a, b) => {
@@ -61,6 +92,7 @@ function Games(props) {
 
   return (
     <div className="fakeStore-mainContainer">
+
       <div>
         <Navbar />
         <h2>Games</h2>
@@ -69,17 +101,39 @@ function Games(props) {
         <img src="http://www.volt.com/uploadedImages/Blog/how_to_get_a_job_as_a_video_game_tester_banner.jpg" />
       </div>
 
-      <div className="fakeStore-button-div"></div>
-      <div>
-        <h3>Sort By:</h3>
-      </div>
-      <div>
-        <button className="fakeStore-button" onClick={() => sortByHigh()}>
-          Highest Price
-        </button>
-        <button className="fakeStore-button" onClick={() => sortByLow()}>
-          Lowest Price
-        </button>
+
+
+      <div className="sortBy">
+        <div>
+          <h3>Sort By:</h3>
+        </div>
+        <div>
+
+          <div className="wishlist-buttons-container">
+            <button className="wishlist-buttons" onClick={sortByHigh}>
+              Highest Price
+              </button>
+            <button className="wishlist-buttons" onClick={sortByLow}>
+              Lowest Price
+              </button>
+            <button className="wishlist-buttons" onClick={sortByAtoZ}>
+              A to Z
+              </button>
+            <button className="wishlist-buttons" onClick={sortByZtoA}>
+              Z to A
+              </button>
+          </div>
+
+          <div className="seachBar-div">
+            <input
+              className="seachBar"
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        </div>
+
       </div>
 
       <div>{displayAllProducts()}</div>
