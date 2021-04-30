@@ -94,8 +94,8 @@ function Makeup(props) {
   //Display on screen
   return (
     <div className="fakeStore-mainContainer">
+      <Navbar />
       <div>
-        <Navbar />
         <h2>Makeup Products</h2>
       </div>
       <div className="header-div">
@@ -103,13 +103,11 @@ function Makeup(props) {
       </div>
 
       <div className="fakeStore-button-div">
-
         <div className="sortBy">
           <div>
             <h3>Sort By:</h3>
           </div>
           <div>
-
             <div className="wishlist-buttons-container">
               <button className="wishlist-buttons" onClick={sortByHigh}>
                 Highest Price
@@ -134,7 +132,6 @@ function Makeup(props) {
               />
             </div>
           </div>
-
         </div>
 
         {filteredProducts.map((product, i) => {
@@ -152,11 +149,10 @@ function Makeup(props) {
                 onClick={() => addToWishlist(product)}
               >
                 Add to Wishlist
-                </button>
+              </button>
             </div>
           );
         })}
-
       </div>
       <Fragment>
         <Content />

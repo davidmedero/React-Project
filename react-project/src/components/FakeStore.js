@@ -89,9 +89,8 @@ function FakeStore(props) {
   //Display on screen
   return (
     <div className="fakeStore-mainContainer">
-
+      <Navbar />
       <div>
-        <Navbar />
         <h2>Fake Store</h2>
       </div>
       <div className="header-div">
@@ -99,17 +98,15 @@ function FakeStore(props) {
       </div>
 
       <div className="fakeStore-button-div">
-
         <div className="sortBy">
           <div>
             <h3>Sort By:</h3>
           </div>
           <div>
-
             <div className="wishlist-buttons-container">
               <button className="wishlist-buttons" onClick={sortByHigh}>
                 Highest Price
-             </button>
+              </button>
               <button className="wishlist-buttons" onClick={sortByLow}>
                 Lowest Price
               </button>
@@ -130,9 +127,7 @@ function FakeStore(props) {
               />
             </div>
           </div>
-
         </div>
-
       </div>
       {filteredProducts.map((product, i) => {
         return (
@@ -152,9 +147,6 @@ function FakeStore(props) {
           </div>
         );
       })}
-
-
-
 
       <div>
         <Fragment>

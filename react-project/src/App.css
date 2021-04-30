@@ -18,8 +18,7 @@ body {
 
 .homeContainer {
   display: flex;
-  /* justify-content: space-around; */
-  margin-top: 100px;
+  margin-top: 50px;
   justify-content: center;
 }
 
@@ -39,19 +38,11 @@ body {
   display: flex;
   flex-direction: column;
   /* border: 3px double rgb(15, 15, 15); */
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .newstoreImg {
   margin-top: -40px;
-}
-
-.makeupLink {
-  margin-bottom: 40px;
-}
-
-.addYourOwnLink {
-  margin-bottom: 70px;
 }
 
 .makeupLinkHome {
@@ -213,10 +204,6 @@ body {
   margin-bottom: 30px;
 }
 
-.steamGamesLink {
-  margin-bottom: 40px;
-}
-
 .allStoreContainer img {
   width: 700px;
   flex-direction: column;
@@ -301,15 +288,13 @@ body {
 }
 
 .navbar-div {
-  font-size: 24px;
-  border-radius: 50px;
-  background-color: red;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 95vw;
 }
 
-.homeLinkStyle {
-  text-decoration: none;
+.homeIcon {
+  width: 50px;
 }
 
 .fakeStore-mainContainer {
@@ -336,11 +321,11 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 14px;
+  margin: 0 3px;
 }
 
 .wishlist-buttons-container {
   display: flex;
-  justify-content: space-around;
   width: 400px;
   padding: 10px 8px;
   margin-top: 5px;
@@ -390,10 +375,6 @@ body {
   height: 400px;
 }
 
-.toyCar-img {
-  width: 300px;
-}
-
 .toyCar-container {
   display: flex;
   justify-content: center;
@@ -427,7 +408,7 @@ body {
   font-size: 30px;
 }
 
-.game-header-div img{
+.game-header-div img {
   width: 65vw;
   height: 40vh;
 }
@@ -439,4 +420,8 @@ body {
 .newItem-mainContainer h2 {
   display: flex;
   justify-content: center;
+}
+
+.homePage-storeLogo {
+  width: 300px;
 }
