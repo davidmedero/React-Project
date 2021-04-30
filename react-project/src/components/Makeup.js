@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
+import { Fragment } from "react";
+import ScrollButton from "./ScrollButton";
+import { Content, Heading } from "./Styles";
 
 function Makeup(props) {
   const [products, setProducts] = useState([]); //Holds all products from API
@@ -66,7 +69,7 @@ function Makeup(props) {
         <h2>Makeup Products</h2>
       </div>
       <div className="header-div">
-        <img src="https://media.istockphoto.com/photos/organic-cosmetics-for-makeup-banner-on-light-pink-background-picture-id1178523655"/>
+        <img src="https://media.istockphoto.com/photos/organic-cosmetics-for-makeup-banner-on-light-pink-background-picture-id1178523655" />
       </div>
 
       <div className="fakeStore-button-div">
@@ -102,6 +105,10 @@ function Makeup(props) {
           })}
         </div>
       </div>
+      <Fragment>
+        <Content />
+        <ScrollButton />
+      </Fragment>
     </div>
   );
 }
