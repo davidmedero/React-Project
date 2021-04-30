@@ -94,7 +94,7 @@ function FakeStore(props) {
         <h2>Fake Store</h2>
       </div>
       <div className="header-div">
-        <img src="https://media.istockphoto.com/photos/organic-cosmetics-for-makeup-banner-on-light-pink-background-picture-id1178523655" />
+        <img src="https://www.makdigitaldesign.com/wp-content/uploads/2020/04/ecommerceads.jpg" />
       </div>
 
       <div className="fakeStore-button-div">
