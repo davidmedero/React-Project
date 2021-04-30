@@ -302,9 +302,14 @@ body {
 
 .navbar-div {
   font-size: 24px;
-  width: 100px;
   border-radius: 50px;
   background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+.homeLinkStyle {
+  text-decoration: none;
 }
 
 .fakeStore-mainContainer {
