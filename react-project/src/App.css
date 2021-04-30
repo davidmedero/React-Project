@@ -38,7 +38,7 @@ body {
 .storeContainer {
   display: flex;
   flex-direction: column;
-  border: 3px double black;
+  border: 3px double rgb(15, 15, 15);
   justify-content: center;
 }
 

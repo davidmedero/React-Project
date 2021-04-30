@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 import banner from "./banner.png";
 import mystore from "./mystore.png";
+import { Fragment } from "react";
+import ScrollButton from "./ScrollButton";
+import { Content, Heading } from "./Styles";
 
 function Home(props) {
   return (
@@ -87,6 +90,10 @@ function Home(props) {
           </div>
         </div>
       </div>
+      <Fragment>
+        <Content />
+        <ScrollButton />
+      </Fragment>
     </div>
   );
 }
